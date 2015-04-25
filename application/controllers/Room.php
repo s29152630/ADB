@@ -61,4 +61,37 @@ class Room extends CI_Controller {
 		$this->load->view('inquire_room_record', $table);
 	}
 
+	// 員工專用訂房紀錄查詢
+	public function inquireRoomRecord()
+	{
+		$this->load->helper('form');
+		$this->load->view('binquire_room_record');
+	}
+
+
+	// 員工專用訂房紀錄查詢
+	public function inquireRoomRecordSuccess()
+	{
+		$this->load->library('table');
+
+		$queryBag['roomCapacity'] = $this->input->post('roomCapacity');
+		$queryBag['roomPrice'] = $this->input->post('roomPrice');
+		$queryBag['roomStyle'] = $this->input->post('roomStyle');
+		$queryBag['date1'] = $this->input->post('date1');
+		$queryBag['date2'] = $this->input->post('date2');
+
+		if(empty($queryBag['date1']))
+		{
+			$queryBag['date1'] = "1970-01-01";
+		}
+
+		if(empty($queryBag['date2']))
+		{
+			$queryBag['date2'] = "9999-12-31";
+		}
+
+		$data['resultSet'] = $this->room_model->getRoomRecordB($queryBag);
+		$table['table'] = $this->table->generate($data['resultSet']);
+		$this->load->view('inquire_room_success', $table);
+	}
 }

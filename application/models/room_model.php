@@ -51,4 +51,42 @@ class Room_model extends CI_Model {
 
 		return $query; //generate table return query
 	}
+
+	public function getRoomRecordB($queryBag)
+	{
+		// SELECT * FOMR record JOIN room ON record.roomID = room.roomID 
+		// JOIN bookingdate ON record.recID = bookingdate.recID
+		// JOIN member ON record.memID = member.memID
+		// WHERE room.roomCapacity = $queryBag['roomCapacity'] AND room.roomPrice = $queryBag['roomPrice'] 
+		// AND room.roomStyle = $queryBag['roomStyle'] AND bookingdate.startDate >= $queryBag['date1']
+		// AND bookingdate.startDate <= $queryBag['date2'];
+		$this->db->select('member.memID, member.memName, record.roomID, record.recID, record.recDate, 
+			record.checkinDate, record.checkoutDate, room.roomCapacity, room.roomPrice, room.roomStyle, 
+			bookingdate.startDate, bookingdate.endDate');
+		$this->db->from('record');
+		$this->db->join('bookingdate', 'record.recID = bookingdate.recID');
+		$this->db->join('room', 'record.roomID = room.roomID');
+		$this->db->join('member', 'record.memID = member.memID');
+
+		if($queryBag['roomCapacity'] != 0)
+		{
+			$this->db->where('room.roomCapacity', $queryBag['roomCapacity']);
+		}
+
+		if($queryBag['roomPrice'] != 0)
+		{
+			$this->db->where('room.roomPrice', $queryBag['roomPrice']);
+		}
+
+		if($queryBag['roomStyle'] != '0')
+		{
+			$this->db->where('room.roomStyle', $queryBag['roomStyle']); 
+		}
+
+		$this->db->where('bookingdate.startDate >=', $queryBag['date1']);
+		$this->db->where('bookingdate.startDate <=', $queryBag['date2']);
+
+		$query = $this->db->get();
+		return $query; //generate table return query
+	}
 }
