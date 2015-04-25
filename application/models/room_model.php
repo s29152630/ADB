@@ -8,10 +8,9 @@ class Room_model extends CI_Model {
 
 	public function getRoomStatus($queryBag)
 	{
-		// SELECT * FROM room WHERE roomCapacity = $queryBag['roomCapacity']
-		// AND roomPrice = $queryBag['roomPrice'] AND roomStyle = $queryBag['roomStyle'];
-		//SELECT * FROM `room` join `bookingdate` on room.roomID = bookingdate.roomID WHERE room.roomCapacity = 2 
-		//AND room.roomPrice = 2000 AND room.roomStyle = "紅海風格" AND bookingdate.startDate != '2015-4-26';
+		// SELECT * FROM room JOIN bookingdate ON room.roomID = bookingdate.roomID
+		// WHERE roomCapacity = $queryBag['roomCapacity'] AND roomPrice = $queryBag['roomPrice'] 
+		// AND roomStyle = $queryBag['roomStyle'] AND bookingdate.startDate = $queryBag['date'];
 		$this->db->select('bookingdate.roomID');
 		$this->db->from('room');
 		$this->db->join('bookingdate', 'room.roomID = bookingdate.roomID');
@@ -27,11 +26,29 @@ class Room_model extends CI_Model {
 			array_push($notIn, $row->roomID);
 		}
 
+		// SELECT * FROM room WHERE roomID NOT IN ();
 		$this->db->select('*');
 		$this->db->from('room');
 		$this->db->where_not_in('roomID', $notIn);
 		$query2 = $this->db->get();
 
 		return $query2; //generate table return query
+	}
+
+	public function getRoomRecord($sessionID)
+	{
+		// SELECT * FOMR record JOIN room ON record.roomID = room.roomID 
+		// JOIN bookingdate ON record.recID = bookingdate.recID
+		// WHERE record.memID = $sessionID
+		$this->db->select('record.memID, record.roomID, record.recID, record.recDate, 
+			record.checkinDate, record.checkoutDate, room.roomCapacity, roomPrice, roomStyle, 
+			bookingdate.startDate, bookingdate.endDate');
+		$this->db->from('record');
+		$this->db->join('bookingdate', 'record.recID = bookingdate.recID');
+		$this->db->join('room', 'record.roomID = room.roomID');
+		$this->db->where('record.memID', $sessionID);
+		$query = $this->db->get();
+
+		return $query; //generate table return query
 	}
 }
