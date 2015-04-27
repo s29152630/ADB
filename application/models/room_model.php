@@ -20,17 +20,25 @@ class Room_model extends CI_Model {
 		$this->db->where('bookingdate.startDate', $queryBag['date']);
 		$query1 = $this->db->get();
 		
-		$notIn = array();
-		foreach ($query1->result() as $row)
-		{
-			array_push($notIn, $row->roomID);
-		}
+		$query2;
+		if($query1->num_rows()){
+			$notIn = array();
+			foreach ($query1->result() as $row)
+			{
+				array_push($notIn, $row->roomID);
+			}
 
-		// SELECT * FROM room WHERE roomID NOT IN ();
-		$this->db->select('*');
-		$this->db->from('room');
-		$this->db->where_not_in('roomID', $notIn);
-		$query2 = $this->db->get();
+			// SELECT * FROM room WHERE roomID NOT IN ();
+			$this->db->select('*');
+			$this->db->from('room');
+			$this->db->where_not_in('roomID', $notIn);
+			$query2 = $this->db->get();
+		}else{
+			// SELECT * FROM room;
+			$this->db->select('*');
+			$this->db->from('room');
+			$query2 = $this->db->get();
+		}
 
 		return $query2->result(); //generate table return query
 	}
