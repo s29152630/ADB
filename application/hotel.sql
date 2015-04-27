@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `record` (
   `roomID` int(11) NOT NULL,
   `checkoutDate` date NOT NULL,
   `checkinDate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- 資料表的匯出資料 `record`

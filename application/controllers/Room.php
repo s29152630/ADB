@@ -35,18 +35,15 @@ class Room extends CI_Controller {
 	// 查詢可訂房間
 	public function inquireForm()
 	{
-		$this->load->library('table');
-
+		$this->load->helper('form');
+		$this->load->helper('url');
 		$queryBag['roomCapacity'] = $this->input->post('roomCapacity');
 		$queryBag['roomPrice'] = $this->input->post('roomPrice');
 		$queryBag['roomStyle'] = $this->input->post('roomStyle');
 		$queryBag['date'] = $this->input->post('date');
 
 		$data['resultSet'] = $this->room_model->getRoomStatus($queryBag);
-		$table['table'] = $this->table->generate($data['resultSet']);
-		$this->load->view('inquire_room_success', $table);
-
-		// $this->load->view('inquire_room_success', $data);
+		$this->load->view('inquire_room_success', $data);
 	}
 
 	// 查詢訂房紀錄
@@ -94,4 +91,13 @@ class Room extends CI_Controller {
 		$table['table'] = $this->table->generate($data['resultSet']);
 		$this->load->view('inquire_room_success', $table);
 	}
+
+	public function bookingRoom($id)
+	{
+		$sessionID = "1"; // 先寫死之後要更改！！！！
+		$recID = $this->room_model->setRecord($id, $sessionID);
+		$data['message'] = $this->room_model->setBookingRoom($recID,$id);
+		$this->load->view('booking_room_success', $data);
+	}
+
 }

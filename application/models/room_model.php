@@ -32,7 +32,7 @@ class Room_model extends CI_Model {
 		$this->db->where_not_in('roomID', $notIn);
 		$query2 = $this->db->get();
 
-		return $query2; //generate table return query
+		return $query2->result(); //generate table return query
 	}
 
 	public function getRoomRecord($sessionID)
@@ -88,5 +88,49 @@ class Room_model extends CI_Model {
 
 		$query = $this->db->get();
 		return $query; //generate table return query
+	}
+
+	public function setRecord($id,$sessionID)
+	{
+		//INSERT INTO "record" ("roomID", "memID","recDate","payDate","ckeckinDate","checkoutDate") 
+		//VALUES ("$roomID", "$sessionID","$recDate","$payDate","$ckeckinDate","$checkouDate");			
+		
+		$recDate = date("Y-m-d H:i:s");
+
+		$data = array(		
+   			'roomID' => $id ,
+ 			'memID' => $sessionID,
+ 			'recDate' => $recDate,
+ 			'payDate' => "2015-4-26 11:23:34",
+ 			'checkinDate' => "2015-4-26 11:23:34",
+ 			'checkoutDate' => "2015-4-26 11:23:34"
+		);
+
+
+		$this->db->insert('record', $data); 
+		return $this->db->insert_id();
+// echo $recID;
+// var_dump($recID);
+		
+
+	}
+
+
+	public function setBookingRoom($recID,$id)
+	{
+		//INSERT INTO "bookingdate" ("recID","roomID","startDate","endDate") VALUES ($recID, $id, $startDate, $endDate);
+
+		$data = array(		
+   			'recID' => $recID ,
+ 			'roomID' => $id,
+ 			'startDate' => "2015-4-26 11:23:34",
+ 			'endDate' => "2015-4-26 11:23:34"
+		);
+
+		$this->db->insert('bookingdate', $data);
+
+
+
+		return "訂房成功";
 	}
 }

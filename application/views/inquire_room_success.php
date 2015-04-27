@@ -5,10 +5,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 </head>
 <body>
-<?php echo $table ?>
-<!--<?php //foreach ($resultSet as $resultSet_item): ?>
-    <h3><?php //echo $resultSet_item->roomCapacity ?></h3>
-<?php //endforeach ?>
--->
+
+	<table style="width:100%">
+	<?php foreach ($resultSet as $resultSet_item): ?>
+	<tr>
+		<?php $id = $resultSet_item->roomID ?>
+    	<td><?php echo $resultSet_item->roomCapacity ?></td>
+    	<td><?php echo $resultSet_item->roomPrice ?></td>
+    	<td><?php echo $resultSet_item->roomStyle ?></td>
+    	<td><button type="button" value=><a href=<?php echo site_url("room/bookingRoom/" . $id); ?>>預約</a></button></td>
+  	</tr>
+	<?php endforeach ?>
+	</table>
+
 </body>
 </html>
