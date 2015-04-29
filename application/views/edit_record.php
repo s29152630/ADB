@@ -13,11 +13,11 @@ include("SQL.php");
     
     $sql_1='SELECT `recID`,`recDate` FROM `record`'; 
 
-    echo '<form method="POST" action="edit_record_2.php">';
+    echo form_open('repair/editRecord2');
         echo '<select name="recID">';
-        $result_1 = mysql_query($sql_1); 
-            if(mysql_num_rows($result_1)>0){  
-                while ($row = mysql_fetch_object($result_1)){
+        $result_1 = mysqli_query($con, $sql_1); 
+            if(mysqli_num_rows($result_1)>0){  
+                while ($row = mysqli_fetch_object($result_1)){
                     $recID=$row->recID;
                     $recDate=$row->recDate;
                     echo '<option value="'.$recID.'">訂房紀錄'.$recID.'訂房時間'.$recDate.'</option>';
@@ -26,10 +26,6 @@ include("SQL.php");
         echo '</select>';
 
     echo '<input type="submit" value="修改">';            
-    echo '</form>'; 
-
-
-
 
 
 

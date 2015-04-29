@@ -19,6 +19,6 @@
     $sql =  "UPDATE `repairs` SET repCost='".$repCost."' , `rep_endTime`='".$rep_endTime."' WHERE repID='".$_SESSION["repID"]."'"; 
     //echo $sql;
 
-    mysql_query($sql);
+    mysqli_query($con, $sql);
 ?>
 </body>

@@ -19,6 +19,6 @@
     $repContent = $_POST['repContent'];
     $rep_submitTime = date ("Y-m-d H:i:s" , mktime(date('H')+6, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;
     $sql='INSERT INTO `repairs`(`rep_sentID`,`rep_getID`,`roomID`,`repContent`,`rep_submitTime`) VALUES ("'.$rep_sentID.'","'.$rep_getID.'", "'.$roomID.'", "'.$repContent.'","'.$rep_submitTime.'")';
-    mysql_query($sql);
+    mysqli_query($con, $sql);
 ?>
 </body>

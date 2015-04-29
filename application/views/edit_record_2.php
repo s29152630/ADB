@@ -10,15 +10,15 @@
 
 <?php
     include("SQL.php");
-    $recID = $_POST['recID'];
+    // $recID = $_POST['recID'];
     $_SESSION["recID"] = $recID;
     
      
-    $sql_1 = 'SELECT `recDate`,`roomID`,`memID`,`payDay`,`checkinDate`,`checkoutDate` FROM `record` WHERE `recID` = "'.$_SESSION["recID"].'" '; 
+    $sql_1 = 'SELECT * FROM `record` WHERE `recID` = "'.$_SESSION["recID"].'" '; 
     
-    $result_1 = mysql_query($sql_1); 
-    if(mysql_num_rows($result_1)>0){  
-        while ($row = mysql_fetch_object($result_1)){
+    $result_1 = mysqli_query($con, $sql_1); 
+    if(mysqli_num_rows($result_1)>0){  
+        while ($row = mysqli_fetch_object($result_1)){
             $recDate=$row->recDate;
             $roomID=$row->roomID;
             $memID=$row->memID;
@@ -32,7 +32,7 @@
             echo '訂房時間:<input type="text" name="recDate" value="'.$recDate.'" ></br>';
             echo '房號:<input type="text" name="roomID" value="'.$roomID.'"></br>';
             echo '會員ID:<input type="text" name="memID" value="'.$memID.'"></br>';
-            echo '付款時間:<input type="text" name="payDay" value="'.$payDay.'"></br>';
+            echo '付款時間:<input type="text" name="payDay" value="'.$payDate.'"></br>';
             echo '入住時間:<input type="text" name="checkinDate" value="'.$checkinDate.'"></br>';
             echo '退房時間:<input type="text" name="checkoutDate" value="'.$checkoutDate.'"></br>';        
     echo '<input type="submit" value="修改">';            
