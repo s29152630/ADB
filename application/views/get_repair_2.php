@@ -20,9 +20,9 @@
 
 
 
-    $result_1 = mysql_query($sql_1); 
-    if(mysql_num_rows($result_1)>0){  
-        while ($row = mysql_fetch_object($result_1)){
+    $result_1 = mysqli_query($con, $sql_1); 
+    if(mysqli_num_rows($result_1)>0){  
+        while ($row = mysqli_fetch_object($result_1)){
             $roomID=$row->roomID;
             $rep_sentID=$row->rep_sentID;
             $repContent=$row->repContent;

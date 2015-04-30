@@ -12,15 +12,16 @@
 	$dbName="hotel";
 	$dbUser="root";
 	$dbPass="";
+	$con = mysqli_connect($dbServer,$dbUser,$dbPass,"hotel");
+
+	// $link=mysqli_connect($dbServer, $dbUser, $dbPass);
+	// mysqli_select_db($dbName, $link);
+	// mysqli_query("SET NAMES 'utf8'");        
 	
-	$link=mysql_connect($dbServer, $dbUser, $dbPass);
-	mysql_select_db($dbName, $link);
-	mysql_query("SET NAMES 'utf8'");        
-	
-	if(!@mysql_connect($dbServer, $dbUser, $dbPass))
-		die("無法連結資料庫，請聯絡系統管理員".mysql_error());
-	if(!@mysql_select_db($dbName))
-		die("無法使用資料庫");
+	// if(!@mysqli_connect($dbServer, $dbUser, $dbPass))
+	// 	die("無法連結資料庫，請聯絡系統管理員".mysqli_error());
+	// if(!@mysqli_select_db($dbName))
+	// 	die("無法使用資料庫");
 ?>
 
 

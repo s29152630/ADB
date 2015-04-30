@@ -13,7 +13,7 @@ include("SQL.php");
     
     $recID = $_POST['recID'];
     $sql='DELETE FROM `record` WHERE `recID`="'.$recID.'"';
-    mysql_query($sql)
+    mysqli_query($con, $sql)
 
 
 

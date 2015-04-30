@@ -18,9 +18,9 @@ include("SQL.php");
     echo '<form method="POST" action="complete_repair_2.php">';
         echo '查看已完成的修繕單';
         echo '<select name="repID">';
-        $result_1 = mysql_query($sql_1); 
-            if(mysql_num_rows($result_1)>0){  
-                while ($row = mysql_fetch_object($result_1)){
+        $result_1 = mysqli_query($con, $sql_1); 
+            if(mysqli_num_rows($result_1)>0){  
+                while ($row = mysqli_fetch_object($result_1)){
                     $repID=$row->repID;
                     $rep_submitTime=$row->rep_submitTime;
                     echo '<option value="'.$repID.'">單號'.$repID.'時間'.$rep_submitTime.'</option>';

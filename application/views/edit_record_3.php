@@ -26,6 +26,6 @@
     $sql =  "UPDATE `record` SET recDate='".$recDate."',`roomID`='".$roomID."',`memID`='".$memID."',`payDay`='".$payDay."',`checkinDate`='".$checkinDate."',`checkoutDate`='".$checkoutDate."' WHERE recID='".$_SESSION["recID"]."'"; 
     //echo $sql;
 
-    mysql_query($sql);
+    mysqli_query($con, $sql);
 ?>
 </body>

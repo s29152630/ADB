@@ -83,6 +83,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+
+<a href=<?php echo site_url("repair/sendRepair"); ?> >送出修繕單</a>
+<a href=<?php echo site_url("repair/getRepair"); ?> >查詢未完成修繕單cleaner</a>
+<a href=<?php echo site_url("repair/completeRepair"); ?> >查詢已完成修繕單cleaner</a>
+<a href=<?php echo site_url("repair/deleteRecord"); ?> >刪除訂房紀錄</a>
+<a href=<?php echo site_url("repair/editRecord"); ?> >修改訂房紀錄</a>
 </div>
 <a href=<?php echo site_url("test/index"); ?>>會員註冊</a>
 </body>
