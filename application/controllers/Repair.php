@@ -39,11 +39,18 @@ class Repair extends CI_Controller {
 	}
 
 	public function getRepair(){
+		$this->load->helper('form');
 		$this->load->view('get_repair');
 	}
 
 	public function completeRepair(){
+		$this->load->helper('form');
 		$this->load->view('complete_repair');
+	}
+
+	public function completeRepairSuccess(){
+		$this->load->helper('url');
+		$this->load->view('complete_repair_2');
 	}
 
 	public function deleteRecord(){
@@ -73,4 +80,19 @@ class Repair extends CI_Controller {
 
 		$this->load->view('sent_repair_2', $queryBag);
 	}
+
+
+	public function cleanerRepair(){
+		$this->load->helper('form');
+		$this->load->view('get_repair_2');
+	}
+
+	public function cleanerRepairSuccess(){
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->view('get_repair_3');
+	}
+
+
+	
 }

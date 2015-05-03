@@ -15,8 +15,7 @@ include("SQL.php");
 	$rep_getID = $_SESSION['empID'];//暫定為1
 
     $sql_1 = 'SELECT `repID`, `rep_submitTime` FROM `repairs` WHERE `rep_endTime` is NULL AND `rep_getID` = "'.$rep_getID.'" '; 
-    
-    echo '<form method="POST" action="get_repair_2.php">';
+    echo form_open('repair/cleanerRepair');
         echo '選澤未完成的修繕單';
         echo '<select name="repID">';
         $result_1 = mysqli_query($con, $sql_1); 

@@ -39,7 +39,7 @@
     echo '結束時間:'.$rep_endTime.'</br>';
     echo '花費金額:'.$repCost.'</br>';
 
+    echo "<a href=" . site_url("welcome/counter") . ">回主畫面</a><br><br>"; 
 
-    
 ?>
 </body>

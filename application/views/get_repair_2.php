@@ -38,8 +38,7 @@
     echo '發送人ID:'.$rep_sentID.'</br>';
     echo '修繕內容:'.$repContent.'</br>';
     echo '發送時間:'.$rep_submitTime.'</br>';   
-
-    echo '<form method="POST" action="get_repair_3.php">';
+    echo form_open('repair/cleanerRepairSuccess');
     echo '花費金額:<input type="text" name="repCost" value="" >';
     echo '<input type="submit" value="發送">';            
     echo '</form>'; 

@@ -20,5 +20,6 @@
     //echo $sql;
 
     mysqli_query($con, $sql);
+    redirect("welcome/cleaner");
 ?>
 </body>

@@ -14,8 +14,7 @@ include("SQL.php");
     $rep_sentID = $_SESSION['empID'];//暫定為1
     $_SESSION["rep_sentID"] = $rep_sentID;
     $sql_1='SELECT `repID`,`rep_submitTime` FROM `repairs` WHERE `rep_endTime` is not null AND `rep_sentID` = "'.$_SESSION["rep_sentID"].'" '; 
-
-    echo '<form method="POST" action="complete_repair_2.php">';
+    echo form_open('repair/completeRepairSuccess');
         echo '查看已完成的修繕單';
         echo '<select name="repID">';
         $result_1 = mysqli_query($con, $sql_1); 

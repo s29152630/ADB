@@ -17,7 +17,7 @@ if($_SESSION['empID'] != null)
         echo "<a href=" . site_url("room/editRecord") . ">修改顧客訂房紀錄</a>"; 
         echo "<a href=" . site_url("room/deleteRecord") . ">刪除顧客訂房紀錄</a>"; 
         echo "<a href=" . site_url("repair/sendRepair") . ">發送修繕單</a><br><br>"; 
-        echo "<a href=" . site_url("repair/sendRepair") . ">查詢修繕單</a><br><br>"; 
+        echo "<a href=" . site_url("repair/completeRepair") . ">查詢修繕單</a><br><br>"; 
 
         
         $sql = "SELECT * FROM employee WHERE `empID`='".$empID."'";
