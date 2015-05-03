@@ -72,7 +72,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-<?php session_start(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 $db_host = "localhost";
@@ -103,7 +102,7 @@ else
 <a href=<?php echo site_url("welcome/logout"); ?> >登出</a>
 <a href=<?php echo site_url("welcome/memberUpdate"); ?> >修改會員資料</a>
 <a href=<?php echo site_url("room/roomRecord"); ?> >查詢訂房紀錄</a>
-<a href=<?php echo site_url("room/inquireForm"); ?> >查詢可訂房間</a>
+<a href=<?php echo site_url("room/index"); ?> >查詢可訂房間</a>
 </div>
 </body>
 </html>

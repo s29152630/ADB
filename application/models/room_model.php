@@ -31,12 +31,19 @@ class Room_model extends CI_Model {
 			// SELECT * FROM room WHERE roomID NOT IN ();
 			$this->db->select('*');
 			$this->db->from('room');
+			$this->db->where('roomCapacity', $queryBag['roomCapacity']);
+			$this->db->where('roomPrice', $queryBag['roomPrice']);
+			$this->db->where('roomStyle', $queryBag['roomStyle']); 
 			$this->db->where_not_in('roomID', $notIn);
 			$query2 = $this->db->get();
+
 		}else{
 			// SELECT * FROM room;
 			$this->db->select('*');
 			$this->db->from('room');
+			$this->db->where('roomCapacity', $queryBag['roomCapacity']);
+			$this->db->where('roomPrice', $queryBag['roomPrice']);
+			$this->db->where('roomStyle',$queryBag['roomStyle']);
 			$query2 = $this->db->get();
 		}
 
@@ -50,13 +57,12 @@ class Room_model extends CI_Model {
 		// WHERE record.memID = $sessionID
 		$this->db->select('record.memID, record.roomID, record.recID, record.recDate, 
 			record.checkinDate, record.checkoutDate, room.roomCapacity, roomPrice, roomStyle, 
-			bookingdate.startDate, bookingdate.endDate');
+			bookingdate.startDate');
 		$this->db->from('record');
 		$this->db->join('bookingdate', 'record.recID = bookingdate.recID');
 		$this->db->join('room', 'record.roomID = room.roomID');
 		$this->db->where('record.memID', $sessionID);
 		$query = $this->db->get();
-
 		return $query; //generate table return query
 	}
 
@@ -98,7 +104,7 @@ class Room_model extends CI_Model {
 		return $query; //generate table return query
 	}
 
-	public function setRecord($id,$sessionID)
+	public function setRecord($id,$sessionID,$date)
 	{
 		//INSERT INTO "record" ("roomID", "memID","recDate","payDate","ckeckinDate","checkoutDate") 
 		//VALUES ("$roomID", "$sessionID","$recDate","$payDate","$ckeckinDate","$checkouDate");			
@@ -109,36 +115,25 @@ class Room_model extends CI_Model {
    			'roomID' => $id ,
  			'memID' => $sessionID,
  			'recDate' => $recDate,
- 			'payDate' => "2015-4-26 11:23:34",
- 			'checkinDate' => "2015-4-26 11:23:34",
- 			'checkoutDate' => "2015-4-26 11:23:34"
+ 			'payDay' => "",
+ 			'checkinDate' => "",
+ 			'checkoutDate' => ""
 		);
 
-
 		$this->db->insert('record', $data); 
-		return $this->db->insert_id();
-// echo $recID;
-// var_dump($recID);
-		
 
-	}
-
-
-	public function setBookingRoom($recID,$id)
-	{
 		//INSERT INTO "bookingdate" ("recID","roomID","startDate","endDate") VALUES ($recID, $id, $startDate, $endDate);
+		$recID = $this->db->insert_id();
+
 
 		$data = array(		
-   			'recID' => $recID ,
+   			'recID' => $recID,
  			'roomID' => $id,
- 			'startDate' => "2015-4-26 11:23:34",
- 			'endDate' => "2015-4-26 11:23:34"
+ 			'startDate' => $date,
 		);
 
 		$this->db->insert('bookingdate', $data);
 
-
-
-		return "訂房成功";
 	}
+
 }
