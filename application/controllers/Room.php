@@ -54,8 +54,7 @@ class Room extends CI_Controller {
 		$this->load->library('table');
 		$sessionID = $_SESSION['memID'];
 		$data['resultSet'] = $this->room_model->getRoomRecord($sessionID);
-		$table['table'] = $this->table->generate($data['resultSet']);
-		$this->load->view('inquire_room_record', $table);
+		$this->load->view('inquire_room_record', $data);
 	}
 
 	// 員工專用訂房紀錄查詢

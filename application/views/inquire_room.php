@@ -16,9 +16,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   });
   </script>
 </head>
-<body>
+<body style="background-image: url(http://taiwanviptravel.com/wp-content/uploads/2012/07/DSC_0034-2.jpg); background-size:100%">
 
-<h1>房間查詢</h1>
+<div style="margin-top:27%; margin-left:65%">
 
 <?php echo form_open('room/inquireForm'); ?>
 
@@ -60,6 +60,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 </form>
-
+</div>
 </body>
 </html>
