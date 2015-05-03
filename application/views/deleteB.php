@@ -5,16 +5,16 @@
 	$db_name ="hotel";
 	$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 	if (!$db_link) die("資料連結失敗！");
-	mysqli_query($db_link, 'SET CHARACTER SET utf8');
+  mysqli_query($db_link, 'SET CHARACTER SET utf8');
 
 	
 if(isset($_POST["action"])&&($_POST["action"]=="delete")){	
 
-	$sql= "DELETE FROM `employee` WHERE `empID`='".$_GET["empID"]."'";
+	$sql= "DELETE FROM `employee` WHERE `empID`='".$empID."'";
 	mysqli_query($db_link,$sql);
-	header("Location: employeeData.php");
+  redirect('/welcome/employeeData');
 }
-$empID = $_GET['empID'];
+
 $sql_db = "SELECT * FROM `employee` WHERE `empID`='".$empID."'";
 $result = mysqli_query($db_link,$sql_db);
 $row = mysqli_fetch_assoc($result);
@@ -26,7 +26,7 @@ $row = mysqli_fetch_assoc($result);
 </head>
 <body>
 <h1 align="center">會員資料管理系統 - 刪除資料</h1>
-<p align="center"><a href="employeeData.php">回主畫面</a></p>
+<p align="center"><a href=<?php echo site_url("/welcome/employeeData")?>>回主畫面</a></p>
 <form action="" method="post" name="formDel" id="formDel">
   <table border="1" align="center" cellpadding="4">
     <tr>

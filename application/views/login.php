@@ -13,4 +13,3 @@
 <a href=<?php echo site_url("welcome/memberAdd"); ?>>申請帳號</a>
 </div>
 </body>
-

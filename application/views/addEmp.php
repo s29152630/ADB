@@ -23,10 +23,10 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 	
 	$sql= "INSERT INTO `employee` (`emp_Name`, `empID`, `empKey`, `title`, `empEmail`, `empAddress`, `empTel`, `emp_Gender`, `workingtime`, `empYear`, `salary`) VALUES('$name','$id','$key','$title','$email','$address','$tel','$gender','$time','$year','$salary')";
 	$result= mysqli_query($db_link,$sql);
-	
+	redirect('/welcome/employeeData');
 	
 
-	header("Location: employeeData.php");
+
 }	
 ?>
 <html>
@@ -36,7 +36,7 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 </head>
 <body>
 <h1 align="center">員工資料管理系統 - 新增資料</h1>
-<p align="center"><a href="employeeLogin.php">回主畫面</a></p>
+<p align="center"><a href="employeeLogin">回主畫面</a></p>
 <form action="" method="post" name="formAdd" id="formAdd">
   <table border="1" align="center" cellpadding="4">
     <tr><td align="right">員工姓名: </td><td align="left"><input type="text" name="emp_Name"></td></tr>

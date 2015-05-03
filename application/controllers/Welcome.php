@@ -55,6 +55,14 @@ class Welcome extends CI_Controller {
 		$this->load->view('add');
 	}
 
+	public function addEmp()
+	{
+		$this->load->helper('url');
+		$this->load->view('addEmp');
+	}
+
+
+
 
 
 
@@ -112,6 +120,12 @@ class Welcome extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->view('memData');
 	}
+	public function employeeData()
+	{
+		$this->load->helper('url');
+		$this->load->view('employeeData');
+	}
+
 	public function updateC($memId)
 	{
 		$this->load->helper('url');
@@ -123,6 +137,18 @@ class Welcome extends CI_Controller {
 		$this->load->helper('url');
 		$data['memID'] = $memId;
 		$this->load->view('delete',$data);
+	}
+	public function updateB($empId)
+	{
+		$this->load->helper('url');
+		$data['empID'] = $empId;
+		$this->load->view('updateB',$data);
+	}
+	public function deleteB($empId)
+	{
+		$this->load->helper('url');
+		$data['empID'] = $empId;
+		$this->load->view('deleteB',$data);
 	}
 
 

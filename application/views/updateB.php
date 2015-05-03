@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php 
 	$db_host = "localhost";
@@ -9,7 +9,7 @@
 	if (!$db_link) die("資料連結失敗！");
 	mysqli_query($db_link, 'SET CHARACTER SET utf8');
 	if(isset($_POST["action"])&&($_POST["action"]=="update")){	
-		$empID = $_GET['empID'];
+
 		$empName=$_POST['emp_Name'];
 		$empKey=$_POST['empKey'];
 		$title=$_POST['title'];
@@ -43,9 +43,9 @@
 		mysqli_query($db_link,$sql9);
 		mysqli_query($db_link,$sql10);
 	
-		header("Location: employeeData.php");
+		redirect('/welcome/employeeData');
 	}
-$empID = $_GET['empID']; 
+
 $sql = "SELECT * FROM `employee` WHERE `empID`='".$empID."'";
 $result = mysqli_query($db_link,$sql);
 $row = mysqli_fetch_assoc($result);
@@ -57,7 +57,7 @@ $row = mysqli_fetch_assoc($result);
 </head>
 <body>
 <h1 align="center">員工資料管理系統 - 修改資料</h1>
-<p align="center"><a href="employeeData.php">回主畫面</a></p>
+<p align="center"><a href=<?php echo site_url("/welcome/employeeData")?>>回主畫面</a></p>
 <form action="" method="post" name="formFix" id="formFix">
   <table border="1" align="center" cellpadding="4">
     <tr>
@@ -85,7 +85,7 @@ $row = mysqli_fetch_assoc($result);
       <td>性別</td><td>
 
       <?php
-          if($row["memGender"]=="M"){
+          if($row["emp_Gender"]=="M"){
           	echo "
       		<input type='radio' name='emp_Gender' id='radio' value='1' checked='checked'>男
       		<input type='radio' name='emp_Gender' id='radio' value='2' >女";

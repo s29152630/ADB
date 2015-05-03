@@ -19,8 +19,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php
 $db_host = "localhost";
 $db_username = "root";
-$db_password = "nanamylove";
-$db_name ="hotel";
+$db_password = "8147";
+$db_name ="project2";
 $db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 if (!$db_link) die("資料連結失敗！");
 mysqli_query($db_link, 'SET CHARACTER SET utf8');

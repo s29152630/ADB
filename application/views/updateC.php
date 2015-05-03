@@ -8,7 +8,7 @@
 	if (!$db_link) die("資料連結失敗！");
 	mysqli_query($db_link, 'SET CHARACTER SET utf8');
 	if(isset($_POST["action"])&&($_POST["action"]=="update")){	
-		// $memID = $_GET['memID'];
+
 		$memName=$_POST['memName'];
 		$memKey=$_POST['memKey'];
 		$memEmail=$_POST['memEmail'];

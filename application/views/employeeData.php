@@ -47,8 +47,8 @@
 		echo "<td>".$row_result["workingtime"]."</td>";
 		echo "<td>".$row_result["empYear"]."</td>";
 		echo "<td>".$row_result["salary"]."</td>";
-		echo "<td><a href='updateB.php?empID=".$row_result["empID"]."'>修改</a> ";
-		echo "<a href='deleteB.php?empID=".$row_result["empID"]."'>刪除</a></td>";
+		echo "<td><a href=" . site_url("welcome/updateB/" . $row_result["empID"]) . ">修改</a></td>";
+		echo "<td><a href=" . site_url("welcome/deleteB/" . $row_result["empID"]) . ">刪除</a></td>"; 
 		echo "</tr>";
 	}
 ?>

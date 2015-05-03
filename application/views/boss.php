@@ -13,11 +13,9 @@ echo '<a href="employeeLogout">登出</a>  <br><br>';
 $empID = $_SESSION['empID']; 
 if($_SESSION['empID'] != null)
 {
-        //echo "<a href=" . site_url("Welcome/employeeData") . ">查詢顧客訂房記錄</a>";
-        echo '<a href="employeeData">查詢員工資料</a>    ';
-        echo "<a href=" . site_url("repair/sendRepair") . ">查詢修繕單</a><br><br>"; 
 
-
+        echo "<a href=" . site_url("welcome/employeeData") . ">查詢員工資料</a><br><br>"; 
+        echo "<a href=" . site_url("room/inquireRoomRecord") . ">查詢顧客訂房記錄</a><br><br>"; 
 
     
         

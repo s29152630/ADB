@@ -6,7 +6,7 @@ $db_password = "nanamylove";
 $db_name ="hotel";
 $db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 if (!$db_link) die("資料連結失敗！");
-// mysqli_query("SET NAMES 'utf8'");
+
 
 $id = $_POST['memID'];
 $pw = $_POST['memKey'];
