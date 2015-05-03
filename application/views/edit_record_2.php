@@ -10,7 +10,6 @@
 
 <?php
     include("SQL.php");
-    // $recID = $_POST['recID'];
     $_SESSION["recID"] = $recID;
     
      
@@ -28,11 +27,8 @@
         }
     }
 
-    echo '<form method="POST" action="edit_record_3.php">';
-            echo '訂房時間:<input type="text" name="recDate" value="'.$recDate.'" ></br>';
-            echo '房號:<input type="text" name="roomID" value="'.$roomID.'"></br>';
-            echo '會員ID:<input type="text" name="memID" value="'.$memID.'"></br>';
-            echo '付款時間:<input type="text" name="payDay" value="'.$payDate.'"></br>';
+    echo form_open('room/editRecordSuccess');
+            echo '付款時間:<input type="text" name="payDay" value="'.$payDay.'"></br>';
             echo '入住時間:<input type="text" name="checkinDate" value="'.$checkinDate.'"></br>';
             echo '退房時間:<input type="text" name="checkoutDate" value="'.$checkoutDate.'"></br>';        
     echo '<input type="submit" value="修改">';            

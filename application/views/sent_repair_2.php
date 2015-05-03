@@ -12,13 +12,14 @@
     
     include("SQL.php");
     
-    $rep_sentID = $_SESSION['empID'];//暫定為2
+    $rep_sentID = $_SESSION['empID'];
 
     $rep_getID = $_POST['rep_getID'];
     $roomID = $_POST['roomID'];
     $repContent = $_POST['repContent'];
-    $rep_submitTime = date ("Y-m-d H:i:s" , mktime(date('H')+6, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;
+    $rep_submitTime = date ("Y-m-d" , mktime(date('m'), date('d'), date('Y'))) ;
     $sql='INSERT INTO `repairs`(`rep_sentID`,`rep_getID`,`roomID`,`repContent`,`rep_submitTime`) VALUES ("'.$rep_sentID.'","'.$rep_getID.'", "'.$roomID.'", "'.$repContent.'","'.$rep_submitTime.'")';
     mysqli_query($con, $sql);
+    redirect("welcome/counter");
 ?>
 </body>

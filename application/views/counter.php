@@ -14,9 +14,10 @@ if($_SESSION['empID'] != null)
 {
         echo '<a href="memData">查詢顧客資料</a>    ';
         echo "<a href=" . site_url("room/inquireRoomRecord") . ">查詢顧客訂房記錄</a>"; 
-        echo '<a href="xxx.php">修改顧客訂房紀錄</a>   ';
-        echo '<a href="xxx.php">刪除顧客訂房紀錄</a>   ';
-		echo '<a href="xxxx.php">發送修繕單</a>    <br><br>';
+        echo "<a href=" . site_url("room/editRecord") . ">修改顧客訂房紀錄</a>"; 
+        echo "<a href=" . site_url("room/deleteRecord") . ">刪除顧客訂房紀錄</a>"; 
+        echo "<a href=" . site_url("repair/sendRepair") . ">發送修繕單</a><br><br>"; 
+        echo "<a href=" . site_url("repair/sendRepair") . ">查詢修繕單</a><br><br>"; 
 
         
         $sql = "SELECT * FROM employee WHERE `empID`='".$empID."'";

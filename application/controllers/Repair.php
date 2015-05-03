@@ -57,6 +57,8 @@ class Repair extends CI_Controller {
 
 	public function editRecord2()
 	{
+		$this->load->helper('form');
+
 		$queryBag['recID'] = $this->input->post('recID');
 
 		$this->load->view('edit_record_2', $queryBag);
@@ -67,6 +69,7 @@ class Repair extends CI_Controller {
 		$queryBag['rep_getID'] = $this->input->post('rep_getID');
 		$queryBag['roomID'] = $this->input->post('roomID');
 		$queryBag['repContent'] = $this->input->post('repContent');
+		$this->load->helper('url');
 
 		$this->load->view('sent_repair_2', $queryBag);
 	}

@@ -13,9 +13,7 @@
     
     include("SQL.php");
 
-  	$recDate = $_POST['recDate'];
-  	$roomID = $_POST['roomID'];
-  	$memID = $_POST['memID'];
+
   	$payDay = $_POST['payDay'];
   	$checkinDate = $_POST['checkinDate'];
   	$checkoutDate = $_POST['checkoutDate'];
@@ -23,9 +21,10 @@
 
 
 
-    $sql =  "UPDATE `record` SET recDate='".$recDate."',`roomID`='".$roomID."',`memID`='".$memID."',`payDay`='".$payDay."',`checkinDate`='".$checkinDate."',`checkoutDate`='".$checkoutDate."' WHERE recID='".$_SESSION["recID"]."'"; 
+    $sql =  "UPDATE `record` SET `payDay`='".$payDay."',`checkinDate`='".$checkinDate."',`checkoutDate`='".$checkoutDate."' WHERE recID='".$_SESSION["recID"]."'"; 
     //echo $sql;
 
     mysqli_query($con, $sql);
+    redirect('/repair/editRecord');
 ?>
 </body>

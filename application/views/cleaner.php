@@ -13,7 +13,7 @@ echo '<a href="employeeLogout.php">登出</a>  <br><br>';
 $empID = $_SESSION['empID']; 
 if($_SESSION['empID'] != null)
 {
-        echo '<a href="xx.php">查詢修繕單</a>    <br><br>';
+        echo "<a href=" . site_url("repair/getRepair") . ">查詢修繕單</a><br><br>"; 
 
 
 

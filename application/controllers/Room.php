@@ -68,8 +68,6 @@ class Room extends CI_Controller {
 	// 員工專用訂房紀錄查詢
 	public function inquireRoomRecordSuccess()
 	{
-		$this->load->library('table');
-
 		$queryBag['roomCapacity'] = $this->input->post('roomCapacity');
 		$queryBag['roomPrice'] = $this->input->post('roomPrice');
 		$queryBag['roomStyle'] = $this->input->post('roomStyle');
@@ -87,8 +85,7 @@ class Room extends CI_Controller {
 		}
 
 		$data['resultSet'] = $this->room_model->getRoomRecordB($queryBag);
-		// $table['table'] = $this->table->generate($data['resultSet']);
-		$this->load->view('binquire_room_success', $resultSet);
+		$this->load->view('binquire_room_record_success', $data);
 	}
 
 	public function bookingRoom($id,$date)
@@ -99,5 +96,35 @@ class Room extends CI_Controller {
 
 		redirect('/welcome/memberIndex');
 	}
+
+
+	public function editRecord()
+	{
+		$this->load->helper('form');
+		$this->load->helper('url');
+		$this->load->view("edit_record");
+	}
+
+	public function editRecordSuccess()
+	{
+		$this->load->helper('form');
+		$this->load->helper('url');
+		$this->load->view("edit_record_3");
+	}
+
+	public function deleteRecord()
+	{
+		$this->load->helper('form');
+		$this->load->helper('url');
+		$this->load->view("delete_record");
+	}
+
+	public function deleteRecordSuccess()
+	{
+		$this->load->helper('form');
+		$this->load->helper('url');
+		$this->load->view("delete_record_2");
+	}
+
 
 }

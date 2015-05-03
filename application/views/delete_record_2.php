@@ -13,13 +13,8 @@ include("SQL.php");
     
     $recID = $_POST['recID'];
     $sql='DELETE FROM `record` WHERE `recID`="'.$recID.'"';
-    mysqli_query($con, $sql)
-
-
-
-
-
-
+    mysqli_query($con, $sql);
+    redirect('/room/deleteRecord');
 
 ?>
 </body>

@@ -11,7 +11,7 @@
 <?php
 include("SQL.php");
     
-    $sql_1='SELECT `empName`,`empID` FROM `employee` WHERE `title` = "cleaner"'; 
+    $sql_1='SELECT `emp_Name`,`empID` FROM `employee` WHERE `title` = "cleaner"'; 
     $sql_2='SELECT `roomID` FROM `Room`'; 
 
         echo form_open('repair/sentRepair2');
@@ -21,8 +21,8 @@ include("SQL.php");
             if(mysqli_num_rows($result_1)>0){  
                 while ($row = mysqli_fetch_object($result_1)){
                     $empID=$row->empID;
-                    $empName=$row->empName;
-                    echo '<option value="'.$empID.''.$empName.'">'.$empID.''.$empName.'</option>';
+                    $emp_Name=$row->emp_Name;
+                    echo '<option value="'.$empID.'">'.$empID.'</option>';
                 }
             }
         echo '</select>';

@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,7 +12,7 @@ include("SQL.php");
     
     $sql_1='SELECT `recID`,`recDate` FROM `record`'; 
 
-    echo '<form method="POST" action="delete_record_2.php">';
+    echo form_open('room/deleteRecordSuccess');
         echo '<select name="recID">';
         $result_1 = mysqli_query($con, $sql_1); 
             if(mysqli_num_rows($result_1)>0){  
