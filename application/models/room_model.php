@@ -63,7 +63,7 @@ class Room_model extends CI_Model {
 		$this->db->join('room', 'record.roomID = room.roomID');
 		$this->db->where('record.memID', $sessionID);
 		$query = $this->db->get();
-		return $query; //generate table return query
+		return $query->result(); //generate table return query
 	}
 
 	public function getRoomRecordB($queryBag)

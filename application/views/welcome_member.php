@@ -19,8 +19,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php
 $db_host = "localhost";
 $db_username = "root";
-$db_password = "8147";
-$db_name ="project2";
+$db_password = "nanamylove";
+$db_name ="hotel";
 $db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 if (!$db_link) die("資料連結失敗！");
 mysqli_query($db_link, 'SET CHARACTER SET utf8');
@@ -44,11 +44,12 @@ else
 }
 ?>
 
-
+<div style="margin-left:65%;">
 <a href=<?php echo site_url("welcome/logout"); ?> >登出</a>
 <a href=<?php echo site_url("welcome/memberUpdate"); ?> >修改會員資料</a>
 <a href=<?php echo site_url("room/roomRecord"); ?> >查詢訂房紀錄</a>
 <a href=<?php echo site_url("room/index"); ?> >查詢可訂房間</a>
+</div>
 </div>
 </body>
 </html>

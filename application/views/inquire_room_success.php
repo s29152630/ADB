@@ -4,19 +4,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 </head>
-<body>
+<body style="background-image: url(http://taiwanviptravel.com/wp-content/uploads/2012/07/DSC_0034-2.jpg); background-size:100%">
 
-	<table style="width:100%">
+	<div style="margin-left:65%; margin-top:30%;">
 	<?php foreach ($resultSet as $resultSet_item): ?>
-	<tr>
-		<?php $id = $resultSet_item->roomID ?>
-    	<td><?php echo $resultSet_item->roomCapacity ?></td>
-    	<td><?php echo $resultSet_item->roomPrice ?></td>
-    	<td><?php echo $resultSet_item->roomStyle ?></td>
-    	<td><button type="button" value=><a href=<?php echo site_url("room/bookingRoom/" . $id . "/" . $date); ?>>預約</a></button></td>
-  	</tr>
+	
+		<?php $id = $resultSet_item->roomID ?></br>
+    	房間人數<?php echo $resultSet_item->roomCapacity ?></br>
+    	房間價錢<?php echo $resultSet_item->roomPrice ?></br>
+    	房間風格<?php echo $resultSet_item->roomStyle ?></br>
+    	<button type="button" value=><a href=<?php echo site_url("room/bookingRoom/" . $id . "/" . $date); ?>>預約</a></button>
+  	
 	<?php endforeach ?>
-	</table>
+	</div>
 
 </body>
 </html>
