@@ -10,7 +10,7 @@
 <?php
 include("SQL.php");
     
-    $sql_1='SELECT `roomID`,`checkinDate`,`checkoutDate`,`recID`,`recDate` FROM `record`'; 
+    $sql_1='SELECT `roomID`,`payDay`,`checkinDate`,`checkoutDate`,`recID`,`recDate` FROM `record`'; 
 
     echo form_open('repair/editRecord2');
         echo '<select name="recID">';
@@ -20,9 +20,10 @@ include("SQL.php");
                     $roomID=$row->roomID;
                     $recID=$row->recID;
                     $recDate=$row->recDate;
+                    $payDay=$row->payDay;
                     $checkinDate=$row->checkinDate;
                     $checkoutDate=$row->checkoutDate;
-                    echo '<option value="'.$recID.'">房號'.$roomID.',訂房時間'.$recDate.',入住時間'.$checkinDate.',退房時間'.$checkoutDate.'</option>';
+                    echo '<option value="'.$recID.'">房號'.$roomID.',付款時間'.$payDay.',入住時間'.$checkinDate.',退房時間'.$checkoutDate.'</option>';
                 }
             }
         echo '</select>';

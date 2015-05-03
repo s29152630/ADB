@@ -3,18 +3,21 @@
 <?php
 $db_host = "localhost";
 $db_username = "root";
-$db_password = "8147";
-$db_name ="project2";
+$db_password = "nanamylove";
+$db_name ="hotel";
 $db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 if (!$db_link) die("資料連結失敗！");
 mysqli_query($db_link, 'SET CHARACTER SET utf8');
-echo '<a href="employeeLogout.php">登出</a>  <br><br>';
+echo '<a href="employeeLogout">登出</a>  <br><br>';
 
 $empID = $_SESSION['empID']; 
 if($_SESSION['empID'] != null)
 {
-        echo '<a href="employeeData.php">查詢員工資料</a>    ';
-        echo '<a href="xxx.php">查詢顧客訂房紀錄</a>   <br><br>';
+        //echo "<a href=" . site_url("Welcome/employeeData") . ">查詢顧客訂房記錄</a>";
+        echo '<a href="employeeData">查詢員工資料</a>    ';
+        echo "<a href=" . site_url("repair/sendRepair") . ">查詢修繕單</a><br><br>"; 
+
+
 
     
         
@@ -28,6 +31,6 @@ if($_SESSION['empID'] != null)
 else
 {
         echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=employeeLogin.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=employeeLogin>';
 }
 ?>

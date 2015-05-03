@@ -19,8 +19,8 @@
     $repContent = $_POST['repContent'];
     $rep_submitTime = date ("Y-m-d");
     $sql='INSERT INTO `repairs`(`rep_sentID`,`rep_getID`,`roomID`,`repContent`,`rep_submitTime`) VALUES ("'.$rep_sentID.'","'.$rep_getID.'", "'.$roomID.'", "'.$repContent.'","'.$rep_submitTime.'")';
-    var_dump($sql);
+    //var_dump($sql);
     mysqli_query($con, $sql);
-    // redirect("welcome/counter");
+    redirect("welcome/counter");
 ?>
 </body>

@@ -9,9 +9,9 @@
 
 <?php
 	$dbServer="localhost";
-	$dbName="project2";
+	$dbName="hotel";
 	$dbUser="root";
-	$dbPass="8147";
+	$dbPass="nanamylove";
 	$con = mysqli_connect($dbServer,$dbUser,$dbPass,$dbName);
 
 	// $link=mysqli_connect($dbServer, $dbUser, $dbPass);

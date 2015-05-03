@@ -2,8 +2,8 @@
 	header("Content-Type: text/html; charset=utf-8");
 	$db_host = "localhost";
 	$db_username = "root";
-	$db_password = "8147";
-	$db_name ="project2";
+	$db_password = "nanamylove";
+	$db_name ="hotel";
 	$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 	if (!$db_link) die("資料連結失敗！");
 	mysqli_query($db_link, 'SET CHARACTER SET utf8');
@@ -18,7 +18,7 @@
 </head>
 <body>
 <h1 align="center">員工資料管理系統</h1>
-<p align="center">目前資料筆數：<?php echo $total_records;?>，<a href="addEmp.php">新增員工資料</a>。</p>
+<p align="center">目前資料筆數：<?php echo $total_records;?>，<a href="addEmp">新增員工資料</a>。</p>
 <table border="1" align="center">
   <tr>
     <th>員工姓名</th>
