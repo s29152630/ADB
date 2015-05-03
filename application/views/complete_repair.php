@@ -11,7 +11,7 @@
 <?php
 include("SQL.php");
     
-    $rep_sentID = 2;//暫定為1
+    $rep_sentID = $_SESSION['empID'];//暫定為1
     $_SESSION["rep_sentID"] = $rep_sentID;
     $sql_1='SELECT `repID`,`rep_submitTime` FROM `repairs` WHERE `rep_endTime` is not null AND `rep_sentID` = "'.$_SESSION["rep_sentID"].'" '; 
 

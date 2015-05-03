@@ -3,8 +3,8 @@
 <?php
 $db_host = "localhost";
 $db_username = "root";
-$db_password = "nanamylove";
-$db_name ="hotel";
+$db_password = "8147";
+$db_name ="project2";
 $db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 if (!$db_link) die("資料連結失敗！");
 // mysqli_query("SET NAMES 'utf8'");
@@ -22,7 +22,7 @@ if($id!=null && $pw!=null && $row){
 }
 else{
 	echo "登入錯誤";
-	echo '<meta http-equiv=REFRESH CONTENT=1;url=login.php>';
+	echo '<meta http-equiv=REFRESH CONTENT=1;url=login>';
 }
 
 ?>

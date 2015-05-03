@@ -12,7 +12,7 @@
 include("SQL.php");
     
     
-	$rep_getID = 1;//暫定為1
+	$rep_getID = $_SESSION['empID'];//暫定為1
 
     $sql_1 = 'SELECT `repID`, `rep_submitTime` FROM `repairs` WHERE `rep_endTime` is NULL AND `rep_getID` = "'.$rep_getID.'" '; 
     

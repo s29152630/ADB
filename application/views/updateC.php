@@ -9,7 +9,7 @@
 	if (!$db_link) die("資料連結失敗！");
 	mysqli_query($db_link, 'SET CHARACTER SET utf8');
 	if(isset($_POST["action"])&&($_POST["action"]=="update")){	
-		$memID = $_GET['memID'];
+		// $memID = $_GET['memID'];
 		$memName=$_POST['memName'];
 		$memKey=$_POST['memKey'];
 		$memEmail=$_POST['memEmail'];
@@ -31,9 +31,8 @@
 		mysqli_query($db_link,$sql5);
 		mysqli_query($db_link,$sql6);
 	
-		header("Location: memData.php");
+		header("Location: memData");
 	}
-$memID = $_GET['memID']; 
 $sql = "SELECT * FROM `member` WHERE `memID`='".$memID."'";
 $result = mysqli_query($db_link,$sql);
 $row = mysqli_fetch_assoc($result);
@@ -45,7 +44,7 @@ $row = mysqli_fetch_assoc($result);
 </head>
 <body>
 <h1 align="center">會員資料管理系統 - 修改資料</h1>
-<p align="center"><a href="member.php">回主畫面</a></p>
+<p align="center"><a href="welcome_member">回主畫面</a></p>
 <form action="" method="post" name="formFix" id="formFix">
   <table border="1" align="center" cellpadding="4">
     <tr>

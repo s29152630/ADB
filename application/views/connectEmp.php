@@ -8,7 +8,7 @@ $db_password = "8147";
 $db_name ="project2";
 $db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 if (!$db_link) die("資料連結失敗！");
-mysql_query("SET NAMES 'utf8'");
+
 
 
 $id = $_POST['empID'];
@@ -24,13 +24,13 @@ if($id!=null && $pw!=null && $row){
 	$title = $row[2];
 	$_SESSION['title'] = $title;
 	if($_SESSION['title'] == "boss"){
-		echo '<meta http-equiv=REFRESH CONTENT=1;url=boss.php>';
+		echo '<meta http-equiv=REFRESH CONTENT=1;url=boss>';
 	}
 	else if($_SESSION['title'] == "counter"){
-		echo '<meta http-equiv=REFRESH CONTENT=1;url=counter.php>';
+		echo '<meta http-equiv=REFRESH CONTENT=1;url=counter>';
 	}
 	else{
-		echo '<meta http-equiv=REFRESH CONTENT=1;url=cleaner.php>';
+		echo '<meta http-equiv=REFRESH CONTENT=1;url=cleaner>';
 	}
 	
 	

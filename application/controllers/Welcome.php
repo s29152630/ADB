@@ -25,9 +25,22 @@ class Welcome extends CI_Controller {
 		$this->load->view('login');
 	}
 
+	public function employeeLogin()
+	{
+		$this->load->helper('form');
+		$this->load->helper('url');
+		$this->load->view('employeeLogin');
+	}
+
 	public function logout()
 	{
 		$this->load->view('logout');
+	}
+
+
+	public function employeeLogout()
+	{
+		$this->load->view('employeeLogout');
 	}
 
 	public function memberAdd()
@@ -36,10 +49,22 @@ class Welcome extends CI_Controller {
 		$this->load->view('add');
 	}
 
+
+
+
+
+
+
 	public function connectMember()
 	{
 		$this->load->view('connect');
 	}
+
+	public function connectEmp()
+	{
+		$this->load->view('connectEmp');
+	}
+
 
 	public function memberUpdate()
 	{
@@ -47,11 +72,57 @@ class Welcome extends CI_Controller {
 		$this->load->view('update');
 	}
 
+
+
+
+
 	public function memberIndex()
 	{
 		$this->load->helper('url');
 		$this->load->view('welcome_member');
 	}
+
+	public function boss()
+	{
+		$this->load->helper('url');
+		$this->load->view('boss');
+		
+	}
+	public function counter()
+	{
+		$this->load->helper('url');
+		$this->load->view('counter');
+		
+	}
+	public function cleaner()
+	{
+		$this->load->helper('url');
+		$this->load->view('cleaner');
+		
+	}
+
+	public function memData()
+	{
+		$this->load->helper('url');
+		$this->load->view('memData');
+	}
+	public function updateC($memId)
+	{
+		$this->load->helper('url');
+		$data['memID'] = $memId;
+		$this->load->view('updateC',$data);
+	}
+	public function delete()
+	{
+		$this->load->helper('url');
+		$this->load->view('delete');
+	}
+
+
+
+
+
+
 
 	public function index()
 	{

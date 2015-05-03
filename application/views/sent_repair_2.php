@@ -12,7 +12,7 @@
     
     include("SQL.php");
     
-    $rep_sentID = 2;//暫定為2
+    $rep_sentID = $_SESSION['empID'];//暫定為2
 
     $rep_getID = $_POST['rep_getID'];
     $roomID = $_POST['roomID'];
