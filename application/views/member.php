@@ -7,17 +7,9 @@ $db_password = "8147";
 $db_name ="project2";
 $db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 if (!$db_link) die("資料連結失敗！");
-//設定字元集與連線校對
-//mysqli_query($db_link, 'SET NAME utf8');
 mysqli_query($db_link, 'SET CHARACTER SET utf8');
-//mysqli_query($db_link, "SET collaction = 'utf8_unicode_ci'");
-//mysqli_query($db_link, 'SET CHARACTER_SET_CLIENT = utf8');
-//mysqli_query($db_link, 'SET CHARACTER_SET_RESULT = utf8');
-
 echo '<a href="logout.php">登出</a>  <br><br>';
-//此判斷為判定觀看此頁有沒有權限
-//說不定是路人或不相關的使用者
-//因此要給予排除
+
 $memID = $_SESSION['memID']; 
 if($_SESSION['memID'] != null)
 {
@@ -36,6 +28,6 @@ if($_SESSION['memID'] != null)
 else
 {
         echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=login.php>';
 }
 ?>

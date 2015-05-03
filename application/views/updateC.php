@@ -3,13 +3,13 @@
 <?php 
 	$db_host = "localhost";
 	$db_username = "root";
-	$db_password = "nanamylove";
-	$db_name ="hotel";
+	$db_password = "8147";
+	$db_name ="project2";
 	$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 	if (!$db_link) die("資料連結失敗！");
 	mysqli_query($db_link, 'SET CHARACTER SET utf8');
 	if(isset($_POST["action"])&&($_POST["action"]=="update")){	
-		$memID = $_SESSION['memID'];
+		$memID = $_GET['memID'];
 		$memName=$_POST['memName'];
 		$memKey=$_POST['memKey'];
 		$memEmail=$_POST['memEmail'];
@@ -30,11 +30,10 @@
 		mysqli_query($db_link,$sql4);
 		mysqli_query($db_link,$sql5);
 		mysqli_query($db_link,$sql6);
-
-
-		header("Location: memberIndex");
+	
+		header("Location: memData.php");
 	}
-$memID = $_SESSION['memID']; 
+$memID = $_GET['memID']; 
 $sql = "SELECT * FROM `member` WHERE `memID`='".$memID."'";
 $result = mysqli_query($db_link,$sql);
 $row = mysqli_fetch_assoc($result);
@@ -69,20 +68,8 @@ $row = mysqli_fetch_assoc($result);
     </tr>
     <tr>
       <td>性別</td><td>
-      <?php
-          if($row["memGender"]=="M"){
-          	echo "
-      		<input type='radio' name='memGender' id='radio' value='1' checked='checked'>男
-      		<input type='radio' name='memGender' id='radio' value='2' >女";
-          }else{
-          	echo "
-          	<input type='radio' name='memGender' id='radio' value='1' >男
-      		<input type='radio' name='memGender' id='radio' value='2' checked='checked'>女
-      		";
-          }
-
-      ?>
-
+      <input type="radio" name="memGender" id="radio" value="1" >男
+      <input type="radio" name="memGender" id="radio" value="2" >女
       </td>
     </tr>
     <tr>

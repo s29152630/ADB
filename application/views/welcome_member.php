@@ -70,19 +70,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
 
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
 
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
+<?php session_start(); ?>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php
+$db_host = "localhost";
+$db_username = "root";
+$db_password = "nanamylove";
+$db_name ="hotel";
+$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
+if (!$db_link) die("資料連結失敗！");
+mysqli_query($db_link, 'SET CHARACTER SET utf8');
 
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-	</div>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+$memID = $_SESSION['memID']; 
+if($_SESSION['memID'] != null)
+{   
+        $sql = "SELECT * FROM member WHERE `memID`='".$memID."'";
+        $result= mysqli_query($db_link,$sql);
+        while($row = mysqli_fetch_assoc($result))
+        {
+                 echo "姓名：".$row["memName"]. ",帳號：".$row["memID"].",信箱：".$row["memEmail"].", 地址：".$row["memAddress"].", 電話：".$row["memTel"].", 性別：".$row["memGender"]."<br>";
+        }
+}
+else
+{
+        echo '您無權限觀看此頁面!';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=login.php>';
+}
+?>
 
 <a href=<?php echo site_url("welcome/logout"); ?> >登出</a>
 <a href=<?php echo site_url("welcome/memberUpdate"); ?> >修改會員資料</a>

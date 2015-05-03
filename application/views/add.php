@@ -21,6 +21,7 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 	
 	//重新導向回到主畫面
 	header("Location: memberIndex");
+
 }	
 ?>
 <html>
@@ -30,7 +31,7 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 </head>
 <body>
 <h1 align="center">會員資料管理系統 - 新增資料</h1>
-<p align="center"><a href="index.php">回主畫面</a></p>
+<p align="center"><a href="login.php">回主畫面</a></p>
 <form action="" method="post" name="formAdd" id="formAdd">
   <table border="1" align="center" cellpadding="4">
     <tr><td align="right">會員姓名: </td><td align="left"><input type="text" name="memName"></td></tr>
@@ -41,8 +42,8 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 <tr><td align="right">地址: </td><td align="left"><input type="text" name="memAddress"></td></tr>
 <tr><td align="right">電話: </td><td align="left"><input type="text" name="memTel"></td></tr>
 <tr><td align="right">性別: </td><td align="left">
-<input type="radio" name="memGender" value="1" checked ="checked">男性
-<input type="radio" name="memGender" value="2">女性
+<input type="radio" name="memGender" value="M" checked ="checked">男性
+<input type="radio" name="memGender" value="F">女性
 </td></tr>
       <td colspan="2" align="center">
       <input name="action" type="hidden" value="add">
