@@ -22,6 +22,7 @@ class Room extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		session_start();
 		$this->load->model('room_model');
 	}
 
@@ -43,6 +44,7 @@ class Room extends CI_Controller {
 		$queryBag['date'] = $this->input->post('date');
 
 		$data['resultSet'] = $this->room_model->getRoomStatus($queryBag);
+		$data['date'] = $queryBag['date'];
 		$this->load->view('inquire_room_success', $data);
 	}
 
@@ -50,9 +52,7 @@ class Room extends CI_Controller {
 	public function roomRecord()
 	{
 		$this->load->library('table');
-
-		$sessionID = "1"; //暫時寫死
-
+		$sessionID = $_SESSION['memID'];
 		$data['resultSet'] = $this->room_model->getRoomRecord($sessionID);
 		$table['table'] = $this->table->generate($data['resultSet']);
 		$this->load->view('inquire_room_record', $table);
@@ -92,12 +92,13 @@ class Room extends CI_Controller {
 		$this->load->view('inquire_room_success', $table);
 	}
 
-	public function bookingRoom($id)
+	public function bookingRoom($id,$date)
 	{
-		$sessionID = "1"; // 先寫死之後要更改！！！！
-		$recID = $this->room_model->setRecord($id, $sessionID);
-		$data['message'] = $this->room_model->setBookingRoom($recID,$id);
-		$this->load->view('booking_room_success', $data);
+		$this->load->helper('url');
+		$sessionID = $_SESSION['memID'];
+		$recID = $this->room_model->setRecord($id, $sessionID,$date);
+
+		redirect('/welcome/memberIndex');
 	}
 
 }

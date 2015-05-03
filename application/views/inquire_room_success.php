@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     	<td><?php echo $resultSet_item->roomCapacity ?></td>
     	<td><?php echo $resultSet_item->roomPrice ?></td>
     	<td><?php echo $resultSet_item->roomStyle ?></td>
-    	<td><button type="button" value=><a href=<?php echo site_url("room/bookingRoom/" . $id); ?>>預約</a></button></td>
+    	<td><button type="button" value=><a href=<?php echo site_url("room/bookingRoom/" . $id . "/" . $date); ?>>預約</a></button></td>
   	</tr>
 	<?php endforeach ?>
 	</table>
