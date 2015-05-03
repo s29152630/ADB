@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 
@@ -37,7 +36,7 @@ if($id!=null && $pw!=null && $row){
 }
 else{
 	echo '登入錯誤';
-	echo '<meta http-equiv=REFRESH CONTENT=1;url=employeeLogin.php>';
+	echo '<meta http-equiv=REFRESH CONTENT=1;url=employeeLogin>';
 }
 
 ?>

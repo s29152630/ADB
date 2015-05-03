@@ -76,7 +76,7 @@ class Room_model extends CI_Model {
 		// AND bookingdate.startDate <= $queryBag['date2'];
 		$this->db->select('member.memID, member.memName, record.roomID, record.recID, record.recDate, 
 			record.checkinDate, record.checkoutDate, room.roomCapacity, room.roomPrice, room.roomStyle, 
-			bookingdate.startDate, bookingdate.endDate');
+			bookingdate.startDate');
 		$this->db->from('record');
 		$this->db->join('bookingdate', 'record.recID = bookingdate.recID');
 		$this->db->join('room', 'record.roomID = room.roomID');
@@ -101,7 +101,7 @@ class Room_model extends CI_Model {
 		$this->db->where('bookingdate.startDate <=', $queryBag['date2']);
 
 		$query = $this->db->get();
-		return $query; //generate table return query
+		return $query->result(); //generate table return query
 	}
 
 	public function setRecord($id,$sessionID,$date)

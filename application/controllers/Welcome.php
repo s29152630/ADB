@@ -118,10 +118,11 @@ class Welcome extends CI_Controller {
 		$data['memID'] = $memId;
 		$this->load->view('updateC',$data);
 	}
-	public function delete()
+	public function delete($memId)
 	{
 		$this->load->helper('url');
-		$this->load->view('delete');
+		$data['memID'] = $memId;
+		$this->load->view('delete',$data);
 	}
 
 

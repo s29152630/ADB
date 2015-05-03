@@ -10,11 +10,10 @@
 	
 if(isset($_POST["action"])&&($_POST["action"]=="delete")){	
 
-	$sql= "DELETE FROM `member` WHERE `memID`='".$_GET["memID"]."'";
+	$sql= "DELETE FROM `member` WHERE `memID`='".$memID."'";
 	mysqli_query($db_link,$sql);
-	header("Location: memData.php");
+  redirect('/welcome/memData');
 }
-$memID = $_GET['memID'];
 $sql_db = "SELECT * FROM `member` WHERE `memID`='".$memID."'";
 $result = mysqli_query($db_link,$sql_db);
 $row = mysqli_fetch_assoc($result);
@@ -26,7 +25,7 @@ $row = mysqli_fetch_assoc($result);
 </head>
 <body>
 <h1 align="center">會員資料管理系統 - 刪除資料</h1>
-<p align="center"><a href="memData.php">回主畫面</a></p>
+<p align="center"><a href=<?php echo site_url("/welcome/memData")?>>回主畫面</a></p>
 <form action="" method="post" name="formDel" id="formDel">
   <table border="1" align="center" cellpadding="4">
     <tr>

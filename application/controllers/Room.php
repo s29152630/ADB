@@ -88,8 +88,8 @@ class Room extends CI_Controller {
 		}
 
 		$data['resultSet'] = $this->room_model->getRoomRecordB($queryBag);
-		$table['table'] = $this->table->generate($data['resultSet']);
-		$this->load->view('inquire_room_success', $table);
+		// $table['table'] = $this->table->generate($data['resultSet']);
+		$this->load->view('binquire_room_success', $resultSet);
 	}
 
 	public function bookingRoom($id,$date)

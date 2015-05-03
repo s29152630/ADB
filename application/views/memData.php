@@ -18,7 +18,7 @@
 </head>
 <body>
 <h1 align="center">會員資料管理系統</h1>
-<p align="center">目前資料筆數：<?php echo $total_records;?>，<a href="add">新增會員資料</a>。</p>
+<p align="center">目前資料筆數：<?php echo $total_records;?></p>
 <table border="1" align="center">
   <tr>
     <th>會員姓名</th>
@@ -40,8 +40,8 @@
 		echo "<td>".$row_result["memAddress"]."</td>";
 		echo "<td>".$row_result["memTel"]."</td>";
 		echo "<td>".$row_result["memGender"]."</td>";
-		echo "<td><a href=" . site_url("welcome/updateC/" . $row_result["memID"]) . ">修改</a></td>"; 
-		echo "<a href='delete.php?memID=".$row_result["memID"]."'>刪除</a></td>";
+		echo "<td><a href=" . site_url("welcome/updateC/" . $row_result["memID"]) . ">修改</a></td>";
+		echo "<td><a href=" . site_url("welcome/delete/" . $row_result["memID"]) . ">刪除</a></td>"; 
 		echo "</tr>";
 	}
 ?>

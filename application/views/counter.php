@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 $db_host = "localhost";
@@ -14,12 +13,11 @@ $empID = $_SESSION['empID'];
 if($_SESSION['empID'] != null)
 {
         echo '<a href="memData">查詢顧客資料</a>    ';
-		echo '<a href="xx.php">查詢顧客訂房記錄</a>    ';
+        echo "<a href=" . site_url("room/inquireRoomRecord") . ">查詢顧客訂房記錄</a>"; 
         echo '<a href="xxx.php">修改顧客訂房紀錄</a>   ';
         echo '<a href="xxx.php">刪除顧客訂房紀錄</a>   ';
 		echo '<a href="xxxx.php">發送修繕單</a>    <br><br>';
 
-    
         
         $sql = "SELECT * FROM employee WHERE `empID`='".$empID."'";
         $result= mysqli_query($db_link,$sql);

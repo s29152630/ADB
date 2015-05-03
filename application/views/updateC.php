@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php 
 	$db_host = "localhost";
@@ -30,12 +29,14 @@
 		mysqli_query($db_link,$sql4);
 		mysqli_query($db_link,$sql5);
 		mysqli_query($db_link,$sql6);
-	
-		header("Location: memData");
+    redirect('/welcome/memData');
+
 	}
 $sql = "SELECT * FROM `member` WHERE `memID`='".$memID."'";
 $result = mysqli_query($db_link,$sql);
 $row = mysqli_fetch_assoc($result);
+
+
 ?>
 <html>
 <head>
@@ -44,7 +45,7 @@ $row = mysqli_fetch_assoc($result);
 </head>
 <body>
 <h1 align="center">會員資料管理系統 - 修改資料</h1>
-<p align="center"><a href="welcome_member">回主畫面</a></p>
+<p align="center"><a href=<?php echo site_url("/welcome/memData")?>>回主畫面</a></p>
 <form action="" method="post" name="formFix" id="formFix">
   <table border="1" align="center" cellpadding="4">
     <tr>
@@ -67,8 +68,21 @@ $row = mysqli_fetch_assoc($result);
     </tr>
     <tr>
       <td>性別</td><td>
-      <input type="radio" name="memGender" id="radio" value="1" >男
-      <input type="radio" name="memGender" id="radio" value="2" >女
+
+      <?php
+          if($row["memGender"]=="M"){
+          	echo "
+      		<input type='radio' name='memGender' id='radio' value='1' checked='checked'>男
+      		<input type='radio' name='memGender' id='radio' value='2' >女";
+          }else{
+          	echo "
+          	<input type='radio' name='memGender' id='radio' value='1' >男
+      		<input type='radio' name='memGender' id='radio' value='2' checked='checked'>女
+      		";
+          }
+
+      ?>
+
       </td>
     </tr>
     <tr>

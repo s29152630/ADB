@@ -83,8 +83,21 @@ $row = mysqli_fetch_assoc($result);
     </tr>
     <tr>
       <td>性別</td><td>
-      <input type="radio" name="emp_Gender" id="radio" value="1" >男
-      <input type="radio" name="emp_Gender" id="radio" value="2" >女
+
+      <?php
+          if($row["memGender"]=="M"){
+          	echo "
+      		<input type='radio' name='emp_Gender' id='radio' value='1' checked='checked'>男
+      		<input type='radio' name='emp_Gender' id='radio' value='2' >女";
+          }else{
+          	echo "
+          	<input type='radio' name='emp_Gender' id='radio' value='1' >男
+      		<input type='radio' name='emp_Gender' id='radio' value='2' checked='checked'>女
+      		";
+          }
+
+      ?>
+
       </td>
     </tr>
 	<tr>
