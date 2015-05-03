@@ -3,8 +3,8 @@
 <?php 
 	$db_host = "localhost";
 	$db_username = "root";
-	$db_password = "8147";
-	$db_name ="project2";
+	$db_password = "nanamylove";
+	$db_name ="hotel";
 	$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 	if (!$db_link) die("資料連結失敗！");
 	mysqli_query($db_link, 'SET CHARACTER SET utf8');
@@ -36,7 +36,7 @@ if(isset($_POST["action"])&&($_POST["action"]=="update")){
 	
 
 	//重新導向回到主畫面
-	header("Location: member.php");
+	header("Location: memberIndex");
 }
 $memID = $_SESSION['memID']; 
 $sql = "SELECT * FROM `member` WHERE `memID`='".$memID."'";

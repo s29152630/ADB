@@ -12,7 +12,6 @@
     
     include("SQL.php");
     
-    $rep_getID = 1;//暫定為1
     $repID = $_POST['repID'];
     $_SESSION["repID"] = $repID;
     

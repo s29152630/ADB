@@ -84,11 +84,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 
-<a href=<?php echo site_url("repair/sendRepair"); ?> >送出修繕單</a>
-<a href=<?php echo site_url("repair/getRepair"); ?> >查詢未完成修繕單cleaner</a>
-<a href=<?php echo site_url("repair/completeRepair"); ?> >查詢已完成修繕單cleaner</a>
-<a href=<?php echo site_url("repair/deleteRecord"); ?> >刪除訂房紀錄</a>
-<a href=<?php echo site_url("repair/editRecord"); ?> >修改訂房紀錄</a>
+<a href=<?php echo site_url("welcome/logout"); ?> >登出</a>
+<a href=<?php echo site_url("welcome/memberUpdate"); ?> >修改會員資料</a>
+<a href=<?php echo site_url("room/roomRecord"); ?> >查詢訂房紀錄</a>
+<a href=<?php echo site_url("room/inquireForm"); ?> >查詢可訂房間</a>
 </div>
 </body>
 </html>
