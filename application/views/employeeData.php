@@ -18,7 +18,7 @@
 </head>
 <body>
 <h1 align="center">員工資料管理系統</h1>
-<p align="center">目前資料筆數：<?php echo $total_records;?>，<a href="addEmp.php">新增員工資料</a>。</p>
+<p align="center">目前資料筆數：<?php echo $total_records;?>，<a href="addEmp">新增員工資料</a>。</p>
 <table border="1" align="center">
   <tr>
     <th>員工姓名</th>
@@ -47,8 +47,8 @@
 		echo "<td>".$row_result["workingtime"]."</td>";
 		echo "<td>".$row_result["empYear"]."</td>";
 		echo "<td>".$row_result["salary"]."</td>";
-		echo "<td><a href='updateB.php?empID=".$row_result["empID"]."'>修改</a> ";
-		echo "<a href='deleteB.php?empID=".$row_result["empID"]."'>刪除</a></td>";
+		echo "<td><a href=" . site_url("welcome/updateB/" . $row_result["empID"]) . ">修改</a></td>";
+		echo "<td><a href=" . site_url("welcome/deleteB/" . $row_result["empID"]) . ">刪除</a></td>"; 
 		echo "</tr>";
 	}
 ?>

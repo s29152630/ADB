@@ -56,6 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <input type="text" id="datepicker" size="30" name="date">
 
 <div><input type="submit" value="Submit" /></div>
+<a href=<?php echo site_url("welcome/memberIndex"); ?> >回主畫面</a>
 
 
 

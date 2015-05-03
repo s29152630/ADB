@@ -29,6 +29,7 @@ class Room extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper('form');
+		$this->load->helper('url');
 		$this->load->view('inquire_room');
 
 	}
@@ -52,6 +53,7 @@ class Room extends CI_Controller {
 	public function roomRecord()
 	{
 		$this->load->library('table');
+		$this->load->helper('url');
 		$sessionID = $_SESSION['memID'];
 		$data['resultSet'] = $this->room_model->getRoomRecord($sessionID);
 		$this->load->view('inquire_room_record', $data);
@@ -60,6 +62,7 @@ class Room extends CI_Controller {
 	// 員工專用訂房紀錄查詢
 	public function inquireRoomRecord()
 	{
+		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->view('binquire_room_record');
 	}

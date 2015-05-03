@@ -8,13 +8,13 @@ $db_name ="project2";
 $db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 if (!$db_link) die("資料連結失敗！");
 mysqli_query($db_link, 'SET CHARACTER SET utf8');
-echo '<a href="employeeLogout.php">登出</a>  <br><br>';
+echo '<a href="employeeLogout">登出</a>  <br><br>';
 
 $empID = $_SESSION['empID']; 
 if($_SESSION['empID'] != null)
 {
-        echo '<a href="employeeData.php">查詢員工資料</a>    ';
-        echo '<a href="xxx.php">查詢顧客訂房紀錄</a>   <br><br>';
+        echo "<a href=" . site_url("welcome/employeeData") . ">查詢員工資料</a><br><br>"; 
+        echo "<a href=" . site_url("room/inquireRoomRecord") . ">查詢顧客訂房記錄</a><br><br>"; 
 
     
         
@@ -28,6 +28,6 @@ if($_SESSION['empID'] != null)
 else
 {
         echo '您無權限觀看此頁面!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=employeeLogin.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=employeeLogin>';
 }
 ?>

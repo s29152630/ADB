@@ -2,8 +2,8 @@
 if(isset($_POST["action"])&&($_POST["action"]=="add")){
 	$db_host = "localhost";
 	$db_username = "root";
-	$db_password = "nanamylove";
-	$db_name ="hotel";
+	$db_password = "8147";
+	$db_name ="project2";
 	$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 	if (!$db_link) die("資料連結失敗！");
 	mysqli_query($db_link, 'SET CHARACTER SET utf8');
@@ -18,9 +18,8 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 	
 	$sql= "INSERT INTO `member` (`memName`, `memID`, `memKey`, `memAddress`, `memEmail`, `memTel`, `memGender`) VALUES('$name','$id','$key','$address','$emali','$tel','$gender')";
 	$result= mysqli_query($db_link,$sql);
-	
-	//重新導向回到主畫面
-	header("Location: memberIndex");
+	header("Location: login");
+	//redirect('/welcome/memberIndex');
 
 }	
 ?>
@@ -31,7 +30,7 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 </head>
 <body>
 <h1 align="center">會員資料管理系統 - 新增資料</h1>
-<p align="center"><a href="login.php">回主畫面</a></p>
+<p align="center"><a href="login">回主畫面</a></p>
 <form action="" method="post" name="formAdd" id="formAdd">
   <table border="1" align="center" cellpadding="4">
     <tr><td align="right">會員姓名: </td><td align="left"><input type="text" name="memName"></td></tr>
