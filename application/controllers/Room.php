@@ -71,6 +71,7 @@ class Room extends CI_Controller {
 	// 員工專用訂房紀錄查詢
 	public function inquireRoomRecordSuccess()
 	{
+		$this->load->helper('url');
 		$queryBag['roomCapacity'] = $this->input->post('roomCapacity');
 		$queryBag['roomPrice'] = $this->input->post('roomPrice');
 		$queryBag['roomStyle'] = $this->input->post('roomStyle');

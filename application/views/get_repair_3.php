@@ -15,7 +15,7 @@
 
    
     $repCost = $_POST['repCost'];
-    $rep_endTime = date ("Y-m-d H:i:s" , mktime(date('H')+6, date('i'), date('s'), date('m'), date('d'), date('Y'))) ;
+    $rep_endTime = date ("Y-m-d");
     $sql =  "UPDATE `repairs` SET repCost='".$repCost."' , `rep_endTime`='".$rep_endTime."' WHERE repID='".$_SESSION["repID"]."'"; 
     //echo $sql;
 

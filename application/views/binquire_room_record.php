@@ -66,6 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div><input type="submit" value="Submit" /></div>
 </form>
 
+<a href=<?php echo site_url("welcome/boss"); ?> >回主畫面</a>
 
 
 </body>

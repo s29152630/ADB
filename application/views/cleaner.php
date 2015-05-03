@@ -8,7 +8,7 @@ $db_name ="hotel";
 $db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
 if (!$db_link) die("資料連結失敗！");
 mysqli_query($db_link, 'SET CHARACTER SET utf8');
-echo '<a href="employeeLogout.php">登出</a>  <br><br>';
+echo '<a href="employeeLogout">登出</a>  <br><br>';
 
 $empID = $_SESSION['empID']; 
 if($_SESSION['empID'] != null)

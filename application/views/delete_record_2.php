@@ -17,4 +17,5 @@ include("SQL.php");
     redirect('/room/deleteRecord');
 
 ?>
+
 </body>

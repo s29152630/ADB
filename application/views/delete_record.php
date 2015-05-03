@@ -34,4 +34,6 @@ include("SQL.php");
 
 
 ?>
+    <a href=<?php echo site_url("welcome/counter"); ?> >回主畫面</a>
+
 </body>

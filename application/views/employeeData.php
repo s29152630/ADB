@@ -19,6 +19,8 @@
 <body>
 <h1 align="center">員工資料管理系統</h1>
 <p align="center">目前資料筆數：<?php echo $total_records;?>，<a href="addEmp">新增員工資料</a>。</p>
+<p align="center"><a href=<?php echo site_url("welcome/boss"); ?> >回主畫面</a></p>
+
 <table border="1" align="center">
   <tr>
     <th>員工姓名</th>
@@ -52,6 +54,8 @@
 		echo "</tr>";
 	}
 ?>
+
+
 </table>
 </body>
 </html>

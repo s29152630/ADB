@@ -54,11 +54,13 @@ class Repair extends CI_Controller {
 	}
 
 	public function deleteRecord(){
+		$this->load->helper('url');
 		$this->load->view('delete_record');
 	}
 
 	public function editRecord(){
 		$this->load->helper('form');
+		$this->load->helper('url');
 		$this->load->view('edit_record');
 	}
 
