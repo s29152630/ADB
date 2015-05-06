@@ -16,12 +16,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>員工資料管理系統</title>
 </head>
-<body>
-<h1 align="center">員工資料管理系統</h1>
-<p align="center">目前資料筆數：<?php echo $total_records;?>，<a href="addEmp">新增員工資料</a>。</p>
-<p align="center"><a href=<?php echo site_url("welcome/boss"); ?> >回主畫面</a></p>
+<body style=" font-weight:bold; font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
 
-<table border="1" align="center">
+
+
+<div style="font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); margin: 0px auto;width:1050px; border-radius: 8px;margin-top:270px;">	
+<h1 align="center">員工資料管理系統</h1>
+<table style="font-weight:bold;" border="1" align="center">
   <tr>
     <th>員工姓名</th>
     <th>帳號名稱</th>
@@ -57,5 +58,8 @@
 
 
 </table>
+<p align="center">目前資料筆數：<?php echo $total_records;?>，<a href="addEmp">新增員工資料</a>。</p>
+<p align="center"><a href=<?php echo site_url("welcome/boss"); ?> >回主畫面</a></p>
+</div>
 </body>
 </html>

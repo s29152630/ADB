@@ -34,11 +34,12 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>員工資料管理系統</title>
 </head>
-<body>
+<body style=" font-weight:bold; font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
+
+<div style="font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); text-align:center;margin: 0px auto; width:450px; border-radius: 8px;margin-top:150px;">
 <h1 align="center">員工資料管理系統 - 新增資料</h1>
-<p align="center"><a href="employeeLogin">回主畫面</a></p>
 <form action="" method="post" name="formAdd" id="formAdd">
-  <table border="1" align="center" cellpadding="4">
+  <table style="font-weight:bold" border="1" align="center" cellpadding="4">
     <tr><td align="right">員工姓名: </td><td align="left"><input type="text" name="emp_Name"></td></tr>
 <tr><td align="right">設定員工ID: </td><td align="left"><input type="text" name="empID"></td></tr>
 <tr><td align="right">設定密碼: </td><td align="left"><input type="password" name="empKey"></td></tr>
@@ -56,11 +57,13 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 <tr><td align="right">薪水: </td><td align="left"><input type="text" name="salary"></td></tr>
       <td colspan="2" align="center">
       <input name="action" type="hidden" value="add">
-      <input type="submit" name="button" id="button" value="新增資料">
-      <input type="reset" name="button2" id="button2" value="重新填寫">
+      <input style="font-family:Microsoft JhengHei; font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);  border-radius: 4px;" type="submit" name="button" id="button" value="新增資料">
+      <input style="font-family:Microsoft JhengHei; font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);  border-radius: 4px;" type="reset" name="button2" id="button2" value="重新填寫">
       </td>
     </tr>
   </table>
 </form>
+<p align="center"><a href="employeeLogin">回主畫面</a></p>
+</div>
 </body>
 </html>

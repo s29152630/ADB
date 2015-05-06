@@ -4,12 +4,16 @@
 <title></title>
 </head>
 
-<body style="background-image: url(http://taiwanviptravel.com/wp-content/uploads/2012/07/DSC_0034-2.jpg); background-size:100%">
+<body style="background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
 <?php echo form_open('welcome/connectMember'); ?>
-<div style="margin-left:65%; margin-top:30%;">	
-	帳號:<input type="text" name="memID" /> <br>
-	密碼:<input type="password" name="memKey" /> <br>
-<input type="submit" name="button" value="登入" />&nbsp;&nbsp;
-<a href=<?php echo site_url("welcome/memberAdd"); ?>>申請帳號</a>
-</div>
+
+	<div style="ZOOM: 200% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); text-align:center;margin: 0px auto; width:300px; border-radius: 8px;margin-top:200px;">	
+		<span style="font-family:Microsoft JhengHei;">帳號:</span><input type="text" name="memID" /></br>
+		<span style="font-family:Microsoft JhengHei;">密碼:</span><input type="password" name="memKey" /></br>
+		<span style="font-family:Microsoft JhengHei;">還不是會員?</span>
+		<span style="font-family:Microsoft JhengHei;"><a href=<?php echo site_url("welcome/memberAdd"); ?>>申請帳號</a></span>
+		<input style="font-family:Microsoft JhengHei; font-weight: bold; background-color: hsla(210, 80%, 50%, 0.075);  border-radius: 4px" type="submit" name="button" value="登入" /></br>
+	</div>
+
+
 </body>

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -8,9 +8,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	
 </head>
-<body style="background-image: url(http://taiwanviptravel.com/wp-content/uploads/2012/07/DSC_0034-2.jpg); background-size:100%">
+<body style="background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
+    <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
 
-<div id="container">
+
+    
+</head>
+<body style="background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
+
+
 
 
 
@@ -32,9 +43,11 @@ if($_SESSION['memID'] != null)
         $result= mysqli_query($db_link,$sql);
         while($row = mysqli_fetch_assoc($result))
         {
-                 echo '<div style="margin-left:65%; margin-top:30%;">';
+                 echo '<div style="ZOOM: 150% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); margin: 0px auto; width:300px; border-radius: 8px;margin-top:200px;">';
+                 echo '<span style="font-family:Microsoft JhengHei;">';
                  echo "姓名：".$row["memName"]. "</br>帳號：".$row["memID"]."</br>信箱：".$row["memEmail"]."</br>地址：".$row["memAddress"]."</br>電話：".$row["memTel"]."</br>性別：".$row["memGender"]."<br>";
-        		 echo '</div>';
+                 echo '</span>';
+                 echo '</div>';
         }
 }
 else
@@ -44,12 +57,19 @@ else
 }
 ?>
 
-<div style="margin-left:65%;">
-<a href=<?php echo site_url("welcome/logout"); ?> >登出</a>
-<a href=<?php echo site_url("welcome/memberUpdate"); ?> >修改會員資料</a>
-<a href=<?php echo site_url("room/roomRecord"); ?> >查詢訂房紀錄</a>
-<a href=<?php echo site_url("room/index"); ?> >查詢可訂房間</a>
+<div style="ZOOM: 150% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); margin: 0px auto;width:300px; border-radius: 8px;">
+    <span style="font-family:Microsoft JhengHei;">
+    <a href=<?php echo site_url("welcome/logout"); ?> >登出</a></br>
+    <a href=<?php echo site_url("welcome/memberUpdate"); ?> >修改會員資料</a></br>
+    <a href=<?php echo site_url("room/roomRecord"); ?> >查詢訂房紀錄</a></br>
+    <a href=<?php echo site_url("room/index"); ?> >查詢可訂房間</a></br>
+    </span>
 </div>
-</div>
+
 </body>
+</html>
+
+
+</body>
+
 </html>

@@ -1,11 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
 <html lang="en">
 <head>
 </head>
-<body>
-	<table style="width:100%">
+<body style=" font-weight:bold; font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
+	<div style="ZOOM: 150% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);margin: 0px auto; width:800px; border-radius: 8px;margin-top:150px;">
+	<table width="100%" style="font-weight:bold;">
 	<tr>
 		<td>預住日期</td>
 		<td>入房時間</td>
@@ -29,6 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php endforeach ?>
 	</table>
 	<a href=<?php echo site_url("welcome/boss"); ?> >回主畫面</a>
+</div>
 
 </body>
 </html>

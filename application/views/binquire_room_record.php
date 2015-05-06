@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -20,9 +20,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   });
   </script>
 </head>
-<body>
+<body style=" font-weight:bold; font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
+
+<div style="ZOOM: 150% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);margin: 0px auto; width:700px; border-radius: 8px;margin-top:150px;">	
 
 <h1>員工專用訂房紀錄查詢</h1>
+
 
 <?php echo form_open('room/inquireRoomRecordSuccess'); ?>
 
@@ -63,10 +66,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <input type="text" id="datepicker" size="30" name="date1">
 <input type="text" id="datepicker2" size="30" name="date2">
 
-<div><input type="submit" value="Submit" /></div>
+<input style="font-family:Microsoft JhengHei; font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);  border-radius: 4px;" type="submit" value="Submit" />
+<a href=<?php echo site_url("welcome/counter"); ?> >回主畫面</a>
 </form>
+</div>
 
-<a href=<?php echo site_url("welcome/boss"); ?> >回主畫面</a>
 
 
 </body>

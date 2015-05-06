@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -16,9 +16,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   });
   </script>
 </head>
-<body style="background-image: url(http://taiwanviptravel.com/wp-content/uploads/2012/07/DSC_0034-2.jpg); background-size:100%">
+<body style="font-weight:bold;font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
 
-<div style="margin-top:27%; margin-left:65%">
+<div style="ZOOM: 150% ;background-color: hsla(210, 80%, 50%, 0.075); margin: 0px auto; width:400px; border-radius: 8px;margin-top:255px;  ">
 
 <?php echo form_open('room/inquireForm'); ?>
 
@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 預約住房日期
 <input type="text" id="datepicker" size="30" name="date">
 
-<div><input type="submit" value="Submit" /></div>
+<input style="font-family:Microsoft JhengHei; font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);  border-radius: 4px" type="submit" value="Submit" />
 <a href=<?php echo site_url("welcome/memberIndex"); ?> >回主畫面</a>
 
 

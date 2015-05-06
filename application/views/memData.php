@@ -16,9 +16,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>會員資料管理系統</title>
 </head>
-<body>
-<h1 align="center">會員資料管理系統</h1>
-<p align="center">目前資料筆數：<?php echo $total_records;?></p>
+<body style=" font-weight:bold; font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
+<div style="ZOOM: 150% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); text-align:center;margin: 0px auto; width:800px; border-radius: 8px;margin-top:150px;">	
+會員資料管理系統</br>
+目前資料筆數：<?php echo $total_records;?>
 <table border="1" align="center">
   <tr>
     <th>會員姓名</th>
@@ -46,9 +47,11 @@
 	}
 ?>
 
-	<a href=<?php echo site_url("welcome/counter"); ?> >回主畫面</a>
+	
 
 </table>
+		<a href=<?php echo site_url("welcome/counter"); ?> >回主畫面</a>
+</div>
 </body>
 </html>
 

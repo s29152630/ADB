@@ -43,11 +43,13 @@ $row = mysqli_fetch_assoc($result);
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>會員資料管理系統</title>
 </head>
-<body>
-<h1 align="center">會員資料管理系統 - 修改資料</h1>
-<p align="center"><a href=<?php echo site_url("/welcome/memData")?>>回主畫面</a></p>
+<body style=" font-weight:bold; font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
+
+
 <form action="" method="post" name="formFix" id="formFix">
-  <table border="1" align="center" cellpadding="4">
+  <div style="ZOOM: 150% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); text-align:center;margin: 0px auto; width:300px; border-radius: 8px;margin-top:150px;"> 
+  會員資料管理系統 - 修改資料
+  <table style="font-weight:bold"border="1" align="center" cellpadding="4">
     <tr>
       <th>欄位</th><th>資料</th>
     </tr>
@@ -89,11 +91,13 @@ $row = mysqli_fetch_assoc($result);
       <td colspan="2" align="center">
       <input name="memID" type="hidden" value="<?php echo $row["memID"];?>">
       <input name="action" type="hidden" value="update">
-      <input type="submit" name="button" id="button" value="更新資料">
-      <input type="reset" name="button2" id="button2" value="重新填寫">
+      <input style="font-family:Microsoft JhengHei; font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);  border-radius: 4px;" type="submit" name="button" id="button" value="更新資料">
+      <input style="font-family:Microsoft JhengHei; font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);  border-radius: 4px;" type="reset" name="button2" id="button2" value="重新填寫">
       </td>
     </tr>
   </table>
+  <p align="center"><a href=<?php echo site_url("/welcome/memData")?>>回主畫面</a></p>
+</div>
 </form>
 </body>
 </html>

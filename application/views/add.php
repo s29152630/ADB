@@ -28,11 +28,10 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>會員資料管理系統</title>
 </head>
-<body>
-<h1 align="center">會員資料管理系統 - 新增資料</h1>
-<p align="center"><a href="login">回主畫面</a></p>
+<body style=" font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
+<div style="ZOOM: 150% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); text-align:center;margin: 0px auto; width:300px; border-radius: 8px;margin-top:150px;">	
 <form action="" method="post" name="formAdd" id="formAdd">
-  <table border="1" align="center" cellpadding="4">
+  <table style=" font-weight: bold;"border="1" align="center" cellpadding="4">
     <tr><td align="right">會員姓名: </td><td align="left"><input type="text" name="memName"></td></tr>
 <tr><td align="right">設定會員ID: </td><td align="left"><input type="text" name="memID"></td></tr>
 <tr><td align="right">設定密碼: </td><td align="left"><input type="password" name="memKey"></td></tr>
@@ -46,11 +45,14 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 </td></tr>
       <td colspan="2" align="center">
       <input name="action" type="hidden" value="add">
-      <input type="submit" name="button" id="button" value="新增資料">
-      <input type="reset" name="button2" id="button2" value="重新填寫">
+      <input style="font-family:Microsoft JhengHei; font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);  border-radius: 4px;"type="submit" name="button" id="button" value="新增資料">
+      <input style="font-family:Microsoft JhengHei; font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);  border-radius: 4px;"type="reset" name="button2" id="button2" value="重新填寫">
       </td>
     </tr>
+
   </table>
+  <p align="center"><a href="login">回主畫面</a></p>
+</div>
 </form>
 </body>
 </html>

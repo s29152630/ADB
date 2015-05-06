@@ -1,5 +1,5 @@
 <?php session_start();?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,7 +16,7 @@
 <title>edit_record_2</title>
 </head>
 
-<body>
+<body style=" font-weight:bold; font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
 
 <?php
     include("SQL.php");
@@ -34,12 +34,16 @@
         }
     }
 
+    echo '<div style="ZOOM: 200% ;font-weight: bold;text-align:center; background-color: hsla(210, 80%, 50%, 0.075); margin: 0px auto; width:280px; border-radius: 8px;margin-top:200px;"> ';
     echo form_open('room/editRecordSuccess');
             echo '付款時間:<input type="text" class="datepicker" name="payDay" value="'.$payDay.'"></br>';
             echo '入住時間:<input type="text" class="datepicker" name="checkinDate" value="'.$checkinDate.'"></br>';
             echo '退房時間:<input type="text" class="datepicker" name="checkoutDate" value="'.$checkoutDate.'"></br>';        
-    echo '<input type="submit" value="修改">';            
+    echo '<div style="text-align:center;">';
+      echo '<input style="font-family:Microsoft JhengHei; font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);  border-radius: 4px;" type="submit" value="修改">';
+    echo'</div>';
     echo '</form>'; 
+    echo '</div>';
 
 
 

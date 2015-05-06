@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
 <html lang="en">
 <head>
 </head>
-<body style="background-image: url(http://taiwanviptravel.com/wp-content/uploads/2012/07/DSC_0034-2.jpg); background-size:100%">
-<div style="margin-top:17%; margin-left:59%">
+<body style="font-weight:bold; font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
+<div style="ZOOM: 150% ;background-color: hsla(210, 80%, 50%, 0.075); margin: 0px auto; width:700px;border-radius: 8px;margin-top:115px;  ">
 
 
-	<table style="width:100%">
+	<table style="width:100%; font-weight:bold; ">
 	<tr>
 		<td>預住日期</td>
 		<td>入房時間</td>
