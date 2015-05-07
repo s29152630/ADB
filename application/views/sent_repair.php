@@ -10,6 +10,7 @@
 
 <?php
 include("SQL.php");
+
     
     $sql_1='SELECT `emp_Name`,`empID` FROM `employee` WHERE `title` = "cleaner"'; 
     $sql_2='SELECT `roomID` FROM `Room`'; 

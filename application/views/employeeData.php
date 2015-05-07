@@ -1,14 +1,9 @@
 <?php 
 	header("Content-Type: text/html; charset=utf-8");
-	$db_host = "localhost";
-	$db_username = "root";
-	$db_password = "nanamylove";
-	$db_name ="hotel";
-	$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
-	if (!$db_link) die("資料連結失敗！");
-	mysqli_query($db_link, 'SET CHARACTER SET utf8');
+	include("SQL.php");
+	mysqli_query($con, 'SET CHARACTER SET utf8');
 	$sql = "SELECT * FROM `employee`";
-	$result = mysqli_query($db_link,$sql);
+	$result = mysqli_query($con,$sql);
 	$total_records = mysqli_num_rows($result);
 ?>
 <html>

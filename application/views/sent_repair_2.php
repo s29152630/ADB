@@ -11,6 +11,7 @@
 <?php
     
     include("SQL.php");
+    mysqli_query($con, 'SET CHARACTER SET utf8');
     
     $rep_sentID = $_SESSION['empID'];
 

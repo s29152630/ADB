@@ -1,21 +1,16 @@
 <?php 
-	$db_host = "localhost";
-	$db_username = "root";
-	$db_password = "nanamylove";
-	$db_name ="hotel";
-	$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
-	if (!$db_link) die("資料連結失敗！");
-	mysqli_query($db_link, 'SET CHARACTER SET utf8');
+	include("SQL.php");
+	mysqli_query($con, 'SET CHARACTER SET utf8');
 
 	
 if(isset($_POST["action"])&&($_POST["action"]=="delete")){	
 
 	$sql= "DELETE FROM `member` WHERE `memID`='".$memID."'";
-	mysqli_query($db_link,$sql);
+	mysqli_query($con,$sql);
   redirect('/welcome/memData');
 }
 $sql_db = "SELECT * FROM `member` WHERE `memID`='".$memID."'";
-$result = mysqli_query($db_link,$sql_db);
+$result = mysqli_query($con,$sql_db);
 $row = mysqli_fetch_assoc($result);
 ?>
 <html>

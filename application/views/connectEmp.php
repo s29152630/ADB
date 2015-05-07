@@ -1,19 +1,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 
-$db_host = "localhost";
-$db_username = "root";
-$db_password = "nanamylove";
-$db_name ="hotel";
-$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
-if (!$db_link) die("資料連結失敗！");
+include("SQL.php");
 
 
 
 $id = $_POST['empID'];
 $pw = $_POST['empKey'];
 $sql= "SELECT empID , empKey , title FROM employee WHERE `empID` ='".$id."' AND `empKey` ='".$pw."'";
-$result= mysqli_query($db_link,$sql);
+$result= mysqli_query($con,$sql);
 $row = mysqli_fetch_row($result);
 
 

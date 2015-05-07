@@ -11,7 +11,7 @@
 <?php
     
     include("SQL.php");
-    
+    mysqli_query($con, 'SET CHARACTER SET utf8');
     $rep_getID = $_SESSION['empID'];//暫定為1
     $repID = $_POST['repID'];
     $_SESSION["repID"] = $repID;

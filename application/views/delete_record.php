@@ -9,16 +9,17 @@
 <?php
 include("SQL.php");
     
-    $sql_1='SELECT `recID`,`recDate` FROM `record`'; 
-    echo '<div style="ZOOM: 150% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); text-align:center;margin: 0px auto; width:300px; border-radius: 8px;margin-top:150px;">';
+    $sql_1='SELECT * FROM `record` NATURAL JOIN `bookingdate`'; 
+    echo '<div style="ZOOM: 150% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); text-align:center;margin: 0px auto; width:400px; border-radius: 8px;margin-top:150px;">';
     echo form_open('room/deleteRecordSuccess');
         echo '<select name="recID">';
         $result_1 = mysqli_query($con, $sql_1); 
             if(mysqli_num_rows($result_1)>0){  
                 while ($row = mysqli_fetch_object($result_1)){
+                    $startDate=$row->startDate;
                     $recID=$row->recID;
                     $recDate=$row->recDate;
-                    echo '<option value="'.$recID.'">訂房紀錄'.$recID.'訂房時間'.$recDate.'</option>';
+                    echo '<option value="'.$recID.'">訂房紀錄'.$recID.'紀錄產生日期'.$recDate.'訂房日期'.$startDate.'</option>';
                 }
             }
         echo '</select>';

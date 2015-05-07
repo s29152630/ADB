@@ -17,6 +17,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   		</span>
 
 	<?php endforeach ?>
+
+    <?php 
+        if(empty($resultSet))
+        {
+            echo "此房已有人預訂";
+        }
+    ?>
 	</div>
 
 </body>

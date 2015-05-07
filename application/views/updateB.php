@@ -1,13 +1,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php 
-	$db_host = "localhost";
-	$db_username = "root";
-	$db_password = "nanamylove";
-	$db_name ="hotel";
-	$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
-	if (!$db_link) die("資料連結失敗！");
-	mysqli_query($db_link, 'SET CHARACTER SET utf8');
+	include("SQL.php");
+	mysqli_query($con, 'SET CHARACTER SET utf8');
 	if(isset($_POST["action"])&&($_POST["action"]=="update")){	
 
 		$empName=$_POST['emp_Name'];
@@ -32,22 +27,22 @@
 		$sql9 = "UPDATE `employee` SET `empYear` = '".$year."'  WHERE `empID`='".$empID."'";
 		$sql10 = "UPDATE `employee` SET `salary` = '".$salary."'  WHERE `empID`='".$empID."'";
 	
-		mysqli_query($db_link,$sql1);
-		mysqli_query($db_link,$sql2);
-		mysqli_query($db_link,$sql3);
-		mysqli_query($db_link,$sql4);
-		mysqli_query($db_link,$sql5);
-		mysqli_query($db_link,$sql6);
-		mysqli_query($db_link,$sql7);
-		mysqli_query($db_link,$sql8);
-		mysqli_query($db_link,$sql9);
-		mysqli_query($db_link,$sql10);
+		mysqli_query($con,$sql1);
+		mysqli_query($con,$sql2);
+		mysqli_query($con,$sql3);
+		mysqli_query($con,$sql4);
+		mysqli_query($con,$sql5);
+		mysqli_query($con,$sql6);
+		mysqli_query($con,$sql7);
+		mysqli_query($con,$sql8);
+		mysqli_query($con,$sql9);
+		mysqli_query($con,$sql10);
 	
 		redirect('/welcome/employeeData');
 	}
 
 $sql = "SELECT * FROM `employee` WHERE `empID`='".$empID."'";
-$result = mysqli_query($db_link,$sql);
+$result = mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
 ?>
 <html>

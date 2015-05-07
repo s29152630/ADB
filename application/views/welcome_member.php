@@ -28,19 +28,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-$db_host = "localhost";
-$db_username = "root";
-$db_password = "nanamylove";
-$db_name ="hotel";
-$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
-if (!$db_link) die("資料連結失敗！");
-mysqli_query($db_link, 'SET CHARACTER SET utf8');
+include("SQL.php");
+mysqli_query($con, 'SET CHARACTER SET utf8');
+
 
 $memID = $_SESSION['memID']; 
 if($_SESSION['memID'] != null)
 {   
         $sql = "SELECT * FROM member WHERE `memID`='".$memID."'";
-        $result= mysqli_query($db_link,$sql);
+        $result= mysqli_query($con,$sql);
         while($row = mysqli_fetch_assoc($result))
         {
                  echo '<div style="ZOOM: 150% ;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075); margin: 0px auto; width:300px; border-radius: 8px;margin-top:200px;">';

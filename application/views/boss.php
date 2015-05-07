@@ -2,13 +2,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <body style=" font-weight:bold; font-family:Microsoft JhengHei;background-size: cover; background-image: url(http://www.ipress.com.hk/photo/20069_3.jpg);">
 <?php
-$db_host = "localhost";
-$db_username = "root";
-$db_password = "nanamylove";
-$db_name ="hotel";
-$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
-if (!$db_link) die("資料連結失敗！");
-mysqli_query($db_link, 'SET CHARACTER SET utf8');
+include("SQL.php");
+mysqli_query($con, 'SET CHARACTER SET utf8');
 
 
 $empID = $_SESSION['empID']; 
@@ -18,7 +13,7 @@ if($_SESSION['empID'] != null)
     
         
         $sql = "SELECT * FROM employee WHERE `empID`='".$empID."'";
-        $result= mysqli_query($db_link,$sql);
+        $result= mysqli_query($con,$sql);
         while($row = mysqli_fetch_assoc($result))
         {
                  echo '<div <div style="ZOOM: 150% ;margin: 0px auto;font-weight: bold;background-color: hsla(210, 80%, 50%, 0.075);  width:300px; border-radius: 8px;margin-top:150px;">';

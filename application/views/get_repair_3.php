@@ -12,7 +12,7 @@
 
     
     include("SQL.php");
-
+	mysqli_query($con, 'SET CHARACTER SET utf8');
    
     $repCost = $_POST['repCost'];
     $rep_endTime = date ("Y-m-d");

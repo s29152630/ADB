@@ -1,12 +1,7 @@
 <?php 
 if(isset($_POST["action"])&&($_POST["action"]=="add")){
-	$db_host = "localhost";
-	$db_username = "root";
-	$db_password = "nanamylove";
-	$db_name ="hotel";
-	$db_link = @mysqli_connect($db_host, $db_username, $db_password, $db_name);
-	if (!$db_link) die("資料連結失敗！");
-	mysqli_query($db_link, 'SET CHARACTER SET utf8');
+	include("SQL.php");
+	mysqli_query($con, 'SET CHARACTER SET utf8');
 	$name=$_POST['emp_Name'];
 	$id=$_POST['empID'];
 	$key=$_POST['empKey'];
@@ -22,7 +17,7 @@ if(isset($_POST["action"])&&($_POST["action"]=="add")){
 	
 	
 	$sql= "INSERT INTO `employee` (`emp_Name`, `empID`, `empKey`, `title`, `empEmail`, `empAddress`, `empTel`, `emp_Gender`, `workingtime`, `empYear`, `salary`) VALUES('$name','$id','$key','$title','$email','$address','$tel','$gender','$time','$year','$salary')";
-	$result= mysqli_query($db_link,$sql);
+	$result= mysqli_query($con,$sql);
 	redirect('/welcome/employeeData');
 	
 

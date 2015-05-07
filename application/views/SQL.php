@@ -2,18 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>撈會員資料用SQL.php</title>
 </head>
 
 <body>
 
 <?php
 	$dbServer="localhost";
-	$dbName="hotel";
+	$dbName="project2";
 	$dbUser="root";
-	$dbPass="nanamylove";
+	$dbPass="8147";
 	$con = mysqli_connect($dbServer,$dbUser,$dbPass,$dbName);
-
+	if (!$con) die("資料連結失敗！");
 	// $link=mysqli_connect($dbServer, $dbUser, $dbPass);
 	// mysqli_select_db($dbName, $link);
 	// mysqli_query("SET NAMES 'utf8'");        

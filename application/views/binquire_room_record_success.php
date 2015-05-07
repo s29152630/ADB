@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<tr>
 
-		<td><?php echo $resultSet_item->recDate ?></td>
+		<td><?php echo $resultSet_item->startDate ?></td>
 		<td><?php echo $resultSet_item->checkinDate ?></td>
 		<td><?php echo $resultSet_item->checkoutDate ?></td>
     	<td><?php echo $resultSet_item->roomCapacity ?></td>
@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   	</tr>
 	<?php endforeach ?>
 	</table>
-	<a href=<?php echo site_url("welcome/boss"); ?> >回主畫面</a>
+	<a href=<?php echo site_url("welcome/counter"); ?> >回主畫面</a>
 </div>
 
 </body>
